@@ -1,0 +1,47 @@
+/* ==========================================================================
+   $GRID-BUILD
+   ========================================================================== */
+/**
+ * Functions and mixins necessary for building the grid
+ */
+
+$grid__base-width: 315 !default;
+
+// Why do we need to know the base width?
+
+$grid__col-width: 10 !default; 
+$grid__gutter: 15 !default;
+
+
+
+
+
+
+/* 
+   MIXINS AND FUNCTIONS
+   ========================================================================== */
+
+
+/* Sets the width of columns and overrides defaults with important */
+@mixin build-column($num: 1, $base-width: $grid__base-width, $col-width: $grid__col-width, $gutter: $grid__gutter) {
+    // width: (percentage($col-width/$base-width) * $num) + (percentage($gutter/$base-width) * ($num - 1)) !important;
+    // margin-left: percentage($gutter/$base-width); 
+    width: percentage(($num / $columns)) !important;
+}
+
+
+
+@mixin column($num: 1, $level: "") {
+
+    @if ($level == "") {
+        @include build-column($num);
+    }
+}
+
+
+// Column sizes
+@for $i from 1 through $columns {
+    .grid__column--#{$i} {
+        @include column($i);
+    }
+}

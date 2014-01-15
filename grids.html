@@ -1,9 +1,125 @@
 <!-- Markup example of grid pattern -->
 
-<div class="grid">
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid system</title>
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="screen.css">
+</head>
+    <body>
+        
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column">
+                    <h1>Grid pattern</h1>
+                </div>
+            </div>
+        </div>
 
-    <div class="grid__column">
 
-    </div>
 
-</div>
+        <div class="grid">
+            <div class="grid__container">
+
+                <div class="grid__column">
+                    <div class="cell">.grid__column</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--5">
+                    <div class="cell">.grid__column--5</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell">.grid__column--2</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--3">
+                    <div class="cell">.grid__column--3</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--8">
+                    <div class="cell">.grid__column--8</div>
+                </div>
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell">.grid__column--2</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell">.grid__column--2</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--8">
+                    <div class="cell">.grid__column--8</div>
+                </div><!-- //.grid__column -->
+
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
+
+
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column">
+                    <h3>Aligning columns</h3>
+                    <p>Columns can be aligned to the right with the <code>.grid__column--right</code> class.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="grid__container">
+                    <div class="grid__column 
+                            grid__column--4">
+                    <div class="cell">.grid__column--4</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--3
+                            grid__column--right">
+                    <div class="cell">.grid__column--3 .grid__column--right</div>
+                </div><!-- //.grid__column -->
+
+
+            </div><!-- //.grid__container -->
+        </div><!--//.grid -->
+
+
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column 
+                            grid__column--4
+                            grid__column--right">
+                    <div class="cell">.grid__column--4 .grid__column--right</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--5">
+                    <div class="cell">.grid__column--5</div>
+                </div><!-- //.grid__column -->
+            </div>
+        </div>
+
+
+
+        <div class="grid">
+            <div class="grid__container">
+
+                <div class="grid__column">
+                    <div class="cell">grid__column</div>
+                </div><!-- //.grid__column -->
+                
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
+        
+
+    </body>
+</html>
