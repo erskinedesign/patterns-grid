@@ -23,7 +23,8 @@ $grid__gutter: 15 !default;
 
 
 /* Sets the width of columns and overrides defaults with important */
-@mixin build-column($num: 1, $base-width: $grid__base-width, $col-width: $grid__col-width, $gutter: $grid__gutter) {
+
+@mixin build-column($num: 1) {
     // width: (percentage($col-width/$base-width) * $num) + (percentage($gutter/$base-width) * ($num - 1)) !important;
     // margin-left: percentage($gutter/$base-width); 
     width: percentage(($num / $columns)) !important;

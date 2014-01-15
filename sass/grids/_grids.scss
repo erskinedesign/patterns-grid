@@ -41,7 +41,7 @@
 .grid {
     @include pie-clearfix(); /* [1] */
     display: block;
-    max-width: 800px; /* [2] */
+    max-width: 850px; /* [2] */
     width: 95%; /* [3] */
     margin: 0 auto; /* [3] */
 
