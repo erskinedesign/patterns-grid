@@ -1,11 +1,77 @@
 /* ==========================================================================
-   GRID PATTERN
+   $GRIDS
    ========================================================================== */
 
 // This is how we deal with grids.
+
+// Portions of this is forked from csswizardry grids
 
 
 @import "compass";
 @import "breakpoint";
 
 @import "config";
+
+$debug: true !default;
+
+
+
+
+
+
+
+
+/**
+ * Define your breakpoints. These should be inherited from the global breakpoints set in config.scss
+ */
+
+$breakpoint: ()!default;
+
+
+
+/* 
+   $SETUP
+   ========================================================================== */
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins/paddings that might affect the grid system.
+ * 3. Apply a negative 'margin-left' to negate columns’ gutters.
+ * 4. 
+ */
+
+.grid {
+    list-style: none; /* [1] */
+    margin: 0; /* [2] */
+    padding: 0; /* [2] */
+    margin-left: -$gutter; /* [3] */
+
+    @if $debug == true {
+        background-color: #ddd;
+    }
+
+}
+
+
+
+
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Full-width unless told to behave otherwise.
+ * 5. Required to combine fluid widths and fixed gutters.
+ */
+
+    .grid__column {
+        display: inline-block; /* [1] */
+        padding-left: $gutter; /* [2] */
+        vertical-align: top; /* [3] */
+        width: 100%; /* [4] */
+        -webkit-box-sizing: border-box; /* [5] */
+        -moz-box-sizing: border-box; /* [5] */
+        box-sizing: border-box; /* [5] */
+
+        @if $debug == true {
+            background-color: #000;
+        }
+    }
