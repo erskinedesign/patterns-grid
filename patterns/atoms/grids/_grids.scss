@@ -35,7 +35,7 @@
 /* 
    2.DEPENDENCIES
    ========================================================================== 
- * 1. Adds configurable settings.
+ * 1. Adds configurable settings such as gutters.
  * 2. Functions and mixins necessary to build the grid.
  */
 
@@ -61,9 +61,16 @@
     width: 95%; /* [3] */
     margin: 0 auto; /* [3] */
 
-    // Breakpoint specific styles go here.
-    @include respond-to("large and above"){
+    /**
+     * Breakpoint specific styles go here.
+     */
+    
+    @include respond-to("medium and above"){
         max-width: 600px;
+    }
+
+    @include respond-to("largest only"){
+        max-width: 1200px;
     }
 }
 
@@ -74,7 +81,6 @@
      * .last and .first grid__column classes
      */
     .grid__container {
-        margin-left: -$gutter;
         margin-right: -$gutter;
     }
 
@@ -91,10 +97,8 @@
             -moz-box-sizing: border-box; /* [1] */
             box-sizing: border-box; /* [1] */
             vertical-align: top; /* [2] */
-            padding-left: $gutter; /* [3] */
             padding-right: $gutter; /* [3] */
             float: left;
-            width: 100%;
         }
 
         /**
@@ -113,9 +117,9 @@
  * Cell unit for testing
  */
 .cell {
-    background-color: #ccc;
+    background-color: rgba(150,0,0,.06);
     border: 1px solid #bbb;
-    color: #333;
+    color: rgba(150,0,0,.6);
     font-family: monaco;
     font-size: 12px;
     margin-bottom: $gutter;

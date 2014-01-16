@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Grid system</title>
-        <!-- <link rel="stylesheet" href="reset.css"> -->
+        <link rel="stylesheet" href="../../../reset.css">
         <link rel="stylesheet" href="../../../screen.css">
     </head>
 
@@ -45,50 +45,91 @@
 
             <div class="grid__container">
                 <div class="grid__column">
-                    <h3>Grid columns</h3>
-                    <p>A <code>.grid__column</code> has many modifiers available for sizing the various units within.</p>
+                    <h3>Fluid grid columns</h3>
+                    <p>A <code>.grid__column</code> has many modifiers available for sizing the various units within. The width of each is dependent on the number of columns set and the width of the container.</p>
+
+                    <p>If a <code>.grid__column</code> does not have a modifier such as <code>.grid__column--4</code> then it naturally takes up the full width of the parent.</p>
                 </div>
             </div>
 
             <div class="grid__container">
 
                 <div class="grid__column">
-                    <div class="cell">.grid__column</div>
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
                 <div class="grid__column 
                             grid__column--5">
-                    <div class="cell">.grid__column--5</div>
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
                 <div class="grid__column 
                             grid__column--2">
-                    <div class="cell">.grid__column--2</div>
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
                 <div class="grid__column 
                             grid__column--3">
-                    <div class="cell">.grid__column--3</div>
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
                 <div class="grid__column
                             grid__column--8">
-                    <div class="cell">.grid__column--8</div>
+                    <div class="cell"></div>
                 </div>
 
                 <div class="grid__column 
                             grid__column--2">
-                    <div class="cell">.grid__column--2</div>
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
                 <div class="grid__column 
                             grid__column--2">
-                    <div class="cell">.grid__column--2</div>
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
                 <div class="grid__column 
                             grid__column--8">
-                    <div class="cell">.grid__column--8</div>
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--5">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--3">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--8">
+                    <div class="cell"></div>
+                </div>
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--8">
+                    <div class="cell"></div>
                 </div><!-- //.grid__column -->
 
             </div><!-- //.grid__container -->
@@ -143,13 +184,200 @@
             <div class="grid__container">
 
                 <div class="grid__column">
-                    <div class="cell">grid__column</div>
+                    <h3>Responsive columns</h3>
+                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid. For instance if a design component needed to be small width at mobile, wide at tablet and then large again at desktop, that is completely possible within this system.</p>
+
                 </div><!-- //.grid__column -->
                 
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
 
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column 
+                            grid__column--9
+                            grid__column--7--medium
+                            grid__column--2--large
+                            grid__column--5--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1
+                            grid__column--3--medium
+                            grid__column--8--large
+                            grid__column--5--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--4
+                            grid__column--6--medium
+                            grid__column--1--large
+                            grid__column--7--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1
+                            grid__column--2--medium
+                            grid__column--1--large
+                            grid__column--1--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--5
+                            grid__column--2--medium
+                            grid__column--8--large
+                            grid__column--2--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--2
+                            grid__column--3--medium
+                            grid__column--4--large
+                            grid__column--9--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--8
+                            grid__column--7--medium
+                            grid__column--6--large
+                            grid__column--1--largest">
+                    <div class="cell"></div>
+                </div>
+                 <div class="grid__column 
+                            grid__column--1
+                            grid__column--3--medium
+                            grid__column--8--large
+                            grid__column--2--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--4
+                            grid__column--7--medium
+                            grid__column--1--large
+                            grid__column--7--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1
+                            grid__column--2--medium
+                            grid__column--1--large
+                            grid__column--1--largest">
+                    <div class="cell"></div>
+                </div>
+                 <div class="grid__column 
+                            grid__column--1
+                            grid__column--3--medium
+                            grid__column--8--large
+                            grid__column--9--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--3
+                            grid__column--5--medium
+                            grid__column--1--large
+                            grid__column--1--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1
+                            grid__column--10--medium
+                            grid__column--1--large
+                            grid__column--1--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--4
+                            grid__column--6--medium
+                            grid__column--1--large
+                            grid__column--2--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1
+                            grid__column--2--medium
+                            grid__column--1--large
+                            grid__column--1--largest">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--4
+                            grid__column--2--medium
+                            grid__column--8--large
+                            grid__column--6--largest">
+                    <div class="cell"></div>
+                </div>
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
 
+
+        <div class="grid">
+            <div class="grid__container">
+                <h3>Pushing columns</h3>
+                <p>Columns can be pushed either left or right of the grid container.</p>
+                
+                <div class="grid__column
+                            grid__column--10
+                            push--left-1">
+                        <div class="cell">.grid__column--10</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--5
+                            push--left-1">
+                        <div class="cell">.grid__column--5</div>
+                </div><!-- //.grid__column -->
+
+                 <div class="grid__column
+                            grid__column--right
+                            grid__column--6
+                            push--right-1">
+                        <div class="cell">.grid__column--6</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--6
+                            push--left-1">
+                        <div class="cell">.grid__column--6</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--right
+                            grid__column--5
+                            push--right-1">
+                        <div class="cell">.grid__column--5</div>
+                </div><!-- //.grid__column -->
+                <div class="grid__column
+                            grid__column--4
+                            push--left-1">
+                        <div class="cell">.grid__column--4</div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--right
+                            grid__column--7
+                            push--right-1">
+                        <div class="cell">.grid__column--7</div>
+                </div><!-- //.grid__column -->
+                <div class="grid__column
+                            grid__column--right
+                            grid__column--10
+                            push--right-1">
+                        <div class="cell">.grid__column--10</div>
+                </div><!-- //.grid__column -->
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
+
+
+
+        <div class="grid">
+            <div class="grid__container">
+                <h3>Full width cells</h3>
+                <p>If a module is not inside the grid then it will naturally be 100% of the viewport.</p>
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
+
+
+        <div class="cell">Full-width cell</div>
 
 
         <div class="grid--overlay">
@@ -192,6 +420,8 @@
             </div>
         </div><!-- //.grid-overlay -->
         
+        <h3>Nesting grids</h3>
+        <h3>Maybe: fixed component</h3>
     </body>
 
 </html>

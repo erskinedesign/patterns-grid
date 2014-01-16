@@ -15,18 +15,15 @@
  */
 
 
-
-
-
-
 /*
  * 1.SIZES
  */
 
 $width__small: 400px;
 $width__medium: 500px;
-$width__large: 700px;
-$width__largest: 850px;
+$width__large: 800px;
+$width__largest: 1150px;
+
 
 
 /*
@@ -49,3 +46,4 @@ $breakpoints: 'below small' (max-width $width__small - 1px, $no-queries),
               'high resolution' (min-resolution 1.5dppx, false),
               'landscape' (orientation landscape),
               'portrait' (orientation portrait);
+

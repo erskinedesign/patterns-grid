@@ -17,31 +17,204 @@
 
 
 
-
 /* 
    BUILD COLUMNS
    ========================================================================== */
 
+/**
+ * Sets the width of columns depending on the total number of them.
+ */
 
-/* Sets the width of columns and overrides defaults with important */
-
-@mixin build-column($num: 1) {
-    // width: (percentage($col-width/$base-width) * $num) + (percentage($gutter/$base-width) * ($num - 1)) !important;
-    // margin-left: percentage($gutter/$base-width); 
-    width: percentage(($num / $columns)) !important;
+@mixin build-column($num) {
+    width: percentage(($num / $columns));
 }
 
+
+/*
+ * Generates widths depending on the viewport and grid settings.
+ */
 @mixin column($num: 1, $level: "") {
+
     @if ($level == "") {
         @include build-column($num);
     }
-}
 
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-column($num);
+        }
+    }
 
-// Column sizes
-@for $i from 1 through $columns {
-    .grid__column--#{$i} {
-        @include column($i);
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-column($num);
+        }
+    }
+
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-column($num);
+        }
+    }
+
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-column($num);
+        }
     }
 }
 
+
+
+
+
+/**
+ * Generate default column sizes with no breakpoints
+ *
+ * .grid__column--4 {
+ *     width: @result;
+ * }
+ */
+
+.grid__column {
+    width: 100%; /* by default all grid columns are full width */  
+}
+
+@for $i from 1 through $columns {
+    .grid__column--#{$i} {
+        @include build-column($i);
+    }
+}
+
+/**
+ * Column sizes at different breakpoints
+ * There is a reason for this to reset CSS in media queries 
+ * because each breakpoint has different column widths
+ */
+
+@each $level in $grid__levels {
+
+    @for $i from 1 through $columns {
+        .grid__column--#{$i}--#{$level} {
+            @include column($i, $level);
+        }
+    }
+}
+
+
+/* 
+   $PUSH-COLUMNS
+   ========================================================================== */
+/*
+ * Generates classes for pushing a column left or right.
+ */
+
+
+/**
+ * $BUILD PUSH MIXINS
+ *
+ * Depending on the number of columns and the iterator, push the column.
+ * 
+ * We cannot use interpolation on mixins so we need to have two separate mixins
+ * to push left and right and to separate for loops to set the values to the 
+ * two classes we need.
+ */
+@mixin build-push--left($num){
+    margin-left:- percentage(($num/$columns));
+}
+
+@for $i from 1 through $columns {
+    .push--left-#{$i} {
+        @include build-push--left($i);
+    }
+}
+
+
+
+@mixin build-push--right($num) {
+    margin-right:- (percentage(($num/$columns)));
+}
+
+@for $i from 1 through $columns {
+    .push--right-#{$i} {
+        @include build-push--right($i);
+    }
+}
+
+
+/**
+ * RESPONSIVE PUSH MIXINS
+ *
+ * These mixins create the various media queries and levels we need to 
+ * have negative margins to the left or right.
+ */
+
+@mixin responsive-push-left($num: 1, $level: "") {
+    @if ($level == "") {
+        @include build-push--left($num);
+    }
+
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-push--left($num);
+        }
+    }
+
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-push--left($num);
+        }
+    }
+
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-push--left($num);
+        }
+    }
+}
+
+@mixin responsive-push-right($num: 1, $level: ""){
+    @if ($level == "") {
+        @include build-push--left($num);
+    }
+
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-push--right($num);
+        }
+    }
+
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-push--right($num);
+        }
+    }
+
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-push--right($num);
+        }
+    }
+}
+
+/**
+ * These directives create the classes that we need by using the Responsive 
+ * Push mixins. Likewise we cannot interpolate includes so we’re forced to
+ * duplicate this code here.
+ */
+
+@each $level in $grid__levels {
+    @for $i from 1 through $columns {
+        .push--left-#{$i}--#{$level} {
+            @include responsive-push-left($i, $level);
+        }
+    }
+}
+
+@each $level in $grid__levels {
+    @for $i from 1 through $columns {
+        .push--right-#{$i}--#{$level} {
+            @include responsive-push-right($i, $level);
+        }
+    }
+}
