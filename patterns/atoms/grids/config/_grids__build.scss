@@ -5,20 +5,21 @@
  * Functions and mixins necessary for building the grid
  */
 
-$grid__base-width: 315 !default;
+// $grid__base-width: 315 !default;
 
 // Why do we need to know the base width?
+// $grid__col-width: 10 !default; 
+// $grid__gutter: 15 !default;
 
-$grid__col-width: 10 !default; 
-$grid__gutter: 15 !default;
 
 
+// The overlay images should be automatically generated with JS from the original breakpoints and the number of columns.
 
 
 
 
 /* 
-   MIXINS AND FUNCTIONS
+   BUILD COLUMNS
    ========================================================================== */
 
 
@@ -30,10 +31,7 @@ $grid__gutter: 15 !default;
     width: percentage(($num / $columns)) !important;
 }
 
-
-
 @mixin column($num: 1, $level: "") {
-
     @if ($level == "") {
         @include build-column($num);
     }
@@ -46,3 +44,4 @@ $grid__gutter: 15 !default;
         @include column($i);
     }
 }
+

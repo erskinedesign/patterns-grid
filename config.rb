@@ -3,7 +3,7 @@ require 'breakpoint'
 
 http_path = "/"
 css_dir = ""
-sass_dir = "/sass"
+sass_dir = "/patterns"
 images_dir = "images"
 javascripts_dir = "scripts"
 

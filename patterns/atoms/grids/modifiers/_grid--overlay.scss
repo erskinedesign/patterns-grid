@@ -1,0 +1,61 @@
+/* ==========================================================================
+   $GRID--OVERLAY
+   ========================================================================== */
+/**
+ * A tool for automatically creating an overlay based on our default breakpoints 
+ */
+
+
+/* 
+   $MARKUP
+   ========================================================================== */
+/**
+ * <div class="grid--overlay">
+ * 	@grid module
+ * </div>
+ */
+
+
+/* 
+   $MODULE DEPENDENCIES
+   ========================================================================== */
+/**
+ * 1. Probably the toggler script.
+ * 2. grid__column generator script.
+ */
+
+
+
+
+
+/* 
+   $OVERLAY
+   ========================================================================== */
+/**
+ * 1. Requires relative position on the body element.
+ */
+
+.grid--overlay {
+	position: absolute; /* [1] */
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: -1;
+}
+	
+	.grid__container {
+
+	}
+
+	.grid--overlay__column {
+
+	}
+
+	.grid--overlay__cell {
+		background-color: rgba(150,0,0,.05);
+		border: none;
+		height: 9999px;
+	}

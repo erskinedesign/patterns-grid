@@ -1,6 +1,26 @@
+/* ==========================================================================
+   $GLOBAL-CONFIG
+   ========================================================================== */
+/**
+ * Sets global variables that can be used throughout the site.
+ */
+
+
+/* 
+   $CONTENTS
+   ========================================================================== */
+/**
+ * 1. Sizes
+ * 2. Breakpoint
+ */
+
+
+
+
+
 
 /*
- * $SIZES
+ * 1.SIZES
  */
 
 $width__small: 400px;
@@ -10,7 +30,7 @@ $width__largest: 850px;
 
 
 /*
- * $BREAKPOINT
+ * 2.BREAKPOINT
  */
 
 $breakpoint-to-ems: true;

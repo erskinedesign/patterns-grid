@@ -1,30 +1,46 @@
 /* ==========================================================================
    $GRIDS
    ========================================================================== */
-
-
-
 /**
- * 1. Markup
+ * A customisable, fully responsive grid system with multiple breakpoints.
  */
 
 
-
+/* 
+   $CONTENTS
+   ========================================================================== */
+/**
+* 1. Markup
+* 2. Dependencies
+*/
 
 
 
 
 /* 
-   MODULE DEPENDENCIES
+   1.MARKUP
+   ========================================================================== 
+ *
+ * <div class="grid">
+ *     <div class="grid__container">
+ *         <div class="grid__column">
+ *             @content
+ *         </div>
+ *     </div>
+ * </div>
+ */
+
+
+
+/* 
+   2.DEPENDENCIES
    ========================================================================== 
  * 1. Adds configurable settings.
  * 2. Functions and mixins necessary to build the grid.
  */
 
-@import "grids/config/grids__settings"; /* [1] */
-@import "grids/config/grids__build"; /* [2] */
-
-
+@import "atoms/grids/config/grids__settings"; /* [1] */
+@import "atoms/grids/config/grids__build"; /* [2] */
 
 
 
@@ -90,15 +106,33 @@
             float: right;
         }
 
+
+
+
 /**
- * Cell for testing
+ * Cell unit for testing
  */
 .cell {
     background-color: #ccc;
+    border: 1px solid #bbb;
     color: #333;
     font-family: monaco;
     font-size: 12px;
     margin-bottom: $gutter;
     display: block;
     padding: $gutter;
+    clear: both;
 }
+
+
+
+
+/* 
+   MODIFIERS
+   ========================================================================== 
+ * 1. Adds an additional grid overlay. 
+ */
+
+@import "atoms/grids/modifiers/grid--overlay"; /* [1] */
+
+

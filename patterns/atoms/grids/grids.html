@@ -2,30 +2,54 @@
 
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Grid system</title>
-    <!-- <link rel="stylesheet" href="reset.css"> -->
-    <link rel="stylesheet" href="screen.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Grid system</title>
+        <!-- <link rel="stylesheet" href="reset.css"> -->
+        <link rel="stylesheet" href="../../../screen.css">
+    </head>
+
     <body>
         
         <div class="grid">
             <div class="grid__container">
                 <div class="grid__column">
                     <h1>Grid pattern</h1>
-                    <p>The grid...</p>
-
-                    <p>The grid container...</p>
-
-                    <p>Grid columns...</p>
+                    <h2>A customisable grid system for internal projects</h2>
+                    <hr/>
                 </div>
             </div>
         </div>
 
-
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column">
+                    <h3>Grid</h3>
+                    <p>The <code>.grid</code> class sets a max-width alongside default margins and padding.</p>
+                </div>
+            </div>
+            <div class="cell">.grid</div>
+        </div>
 
         <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column">
+                    <h3>Grid container</h3>
+                    <p>The <code>.grid__container</code> simply adds negative horizontal margins so that we don’t need any .last or .first <code>.grid__column</code> classes.</p>
+                </div>
+                <div class="cell">.grid__container</div>
+            </div>
+        </div>
+
+        <div class="grid">
+
+            <div class="grid__container">
+                <div class="grid__column">
+                    <h3>Grid columns</h3>
+                    <p>A <code>.grid__column</code> has many modifiers available for sizing the various units within.</p>
+                </div>
+            </div>
+
             <div class="grid__container">
 
                 <div class="grid__column">
@@ -124,7 +148,50 @@
                 
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
-        
 
+
+
+
+        <div class="grid--overlay">
+            <div class="grid">
+                <div class="grid__container">
+
+                    <!-- Create number of divs depending on the number of $columns -->
+
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                    <div class="grid__column grid__column--1 grid--overlay__column">
+                        <div class="cell grid--overlay__cell"></div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- //.grid-overlay -->
+        
     </body>
+
 </html>
