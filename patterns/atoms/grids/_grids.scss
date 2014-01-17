@@ -77,11 +77,13 @@
     
     /**
      * GRID CONTAINER
-     * Adds negative horizontal margins so that we don’t need 
-     * .last and .first grid__column classes
+     * 
+     * 1. Adds negative horizontal margins for columns to fill up.
+     * 2. Clears floats if we need columns that might crash otherwise.
      */
     .grid__container {
-        margin-right: -$gutter;
+        margin-right: -$gutter; /* [1] */
+        clear: both; /* [2] */
     }
 
 

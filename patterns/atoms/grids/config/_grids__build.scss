@@ -103,6 +103,7 @@
 
 
 /* 
+   ==========================================================================
    $PUSH-COLUMNS
    ========================================================================== */
 /*
@@ -110,45 +111,27 @@
  */
 
 
-/**
- * $BUILD PUSH MIXINS
- *
- * Depending on the number of columns and the iterator, push the column.
- * 
- * We cannot use interpolation on mixins so we need to have two separate mixins
- * to push left and right and to separate for loops to set the values to the 
- * two classes we need.
- */
+
+/* 
+    GENERATE PUSH LEFT CLASSES   
+    ========================================================================== */
 @mixin build-push--left($num){
     margin-left:- percentage(($num/$columns));
 }
 
+/**
+ * Generates standard classes from 1 through to the number of
+ * total columns set.
+ */
 @for $i from 1 through $columns {
     .push--left-#{$i} {
         @include build-push--left($i);
     }
 }
 
-
-
-@mixin build-push--right($num) {
-    margin-right:- (percentage(($num/$columns)));
-}
-
-@for $i from 1 through $columns {
-    .push--right-#{$i} {
-        @include build-push--right($i);
-    }
-}
-
-
 /**
- * RESPONSIVE PUSH MIXINS
- *
- * These mixins create the various media queries and levels we need to 
- * have negative margins to the left or right.
+ * Generates breakpoint classes depending on no. of levels
  */
-
 @mixin responsive-push-left($num: 1, $level: "") {
     @if ($level == "") {
         @include build-push--left($num);
@@ -171,8 +154,44 @@
             @include build-push--left($num);
         }
     }
+
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-push--left($num);
+        }
+    }
 }
 
+@each $level in $grid__levels {
+    @for $i from 1 through $columns {
+        .push--left-#{$i}--#{$level} {
+            @include responsive-push-left($i, $level);
+        }
+    }
+}
+
+
+/* 
+    GENERATE PUSH RIGHT CLASSES   
+    ========================================================================== */
+
+@mixin build-push--right($num) {
+    margin-right:- (percentage(($num/$columns)));
+}
+
+/**
+ * Generates standard classes from 1 through to the number of
+ * total columns set.
+ */
+@for $i from 1 through $columns {
+    .push--right-#{$i} {
+        @include build-push--right($i);
+    }
+}
+
+/**
+ * Generates breakpoint classes depending on no. of levels
+ */
 @mixin responsive-push-right($num: 1, $level: ""){
     @if ($level == "") {
         @include build-push--left($num);
@@ -195,18 +214,10 @@
             @include build-push--right($num);
         }
     }
-}
 
-/**
- * These directives create the classes that we need by using the Responsive 
- * Push mixins. Likewise we cannot interpolate includes so we’re forced to
- * duplicate this code here.
- */
-
-@each $level in $grid__levels {
-    @for $i from 1 through $columns {
-        .push--left-#{$i}--#{$level} {
-            @include responsive-push-left($i, $level);
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-push--right($num);
         }
     }
 }
@@ -218,3 +229,130 @@
         }
     }
 }
+
+
+/* 
+    GENERATE PUSH BOTH CLASSES   
+    ========================================================================== */
+/**
+ * In order to set both left and right negative margins we also need to 
+ * increase the width by the same amount.
+ */
+@mixin build-push--both($num) {
+    width: (100%) + (percentage(($num/$columns)) * 2);
+    margin-left:- percentage(($num/$columns));
+}
+
+@for $i from 1 through $columns {
+    .push--both-#{$i} {
+        @include build-push--both($i);
+    }
+}
+
+@mixin responsive-push-both($num: 1, $level: ""){
+     @if ($level == "") {
+        @include build-push--both($num);
+    }
+
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-push--both($num);
+        }
+    }
+
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-push--both($num);
+        }
+    }
+
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-push--both($num);
+        }
+    }
+
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-push--both($num);
+        }
+    }
+}
+
+/* Push both classes */
+@each $level in $grid__levels {
+    @for $i from 1 through $columns {
+        .push--both-#{$i}--#{$level}{
+            @include responsive-push-both($i, $level);
+        }
+    }
+}
+
+
+
+/* 
+    GENERATE PUSH RESET CLASSES   
+    ========================================================================== */
+/**
+ * At other breakpoints we’ll need to reset these values back to margin: 0; so
+ * we need a reset too.
+ */
+
+@mixin build-grid-reset($direction){
+    margin-#{$direction}: 0;
+}
+
+
+
+
+
+
+/* 
+    GENERATE GRID DIRECTION CLASSES   
+    ========================================================================== */
+$directions: left, right;
+
+@mixin build-grid-float($direction){
+    float: $direction;
+}
+
+
+@mixin responsive-grid-float($direction: "left", $level: ""){
+     @if ($level == "") {
+        @include build-grid-float($direction);
+    }
+
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-grid-float($direction);
+        }
+    }
+
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-grid-float($direction);
+        }
+    }
+
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-grid-float($direction);
+        }
+    }
+
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-grid-float($direction);
+        }
+    }
+}
+
+@each $level in $grid__levels {
+    @each $direction in $directions {
+        .grid__column.grid__column--#{$direction}--#{$level} {
+            @include responsive-grid-float($direction, $level);
+        }
+    }
+}
+
+
