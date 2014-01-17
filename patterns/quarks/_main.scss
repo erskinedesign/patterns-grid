@@ -6,7 +6,36 @@
  */
 
 body {
-	position: relative;
-	color: #333;
-	padding-top: 20px;
+    position: relative;
+    color: #333;
+    padding-top: 20px;
+}
+
+
+/**
+ * !REMOVE this after testing
+ */
+
+.island {
+    color: #aaa;
+    margin-bottom: 10px;
+    @include pie-clearfix();
+
+    h4 {
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.island__container {
+    padding: 10px;
+}
+
+.island--dark {
+    background-color: #333;
+    border: 1px solid #222;
+}
+
+.island--light {
+    background-color: #555;
 }

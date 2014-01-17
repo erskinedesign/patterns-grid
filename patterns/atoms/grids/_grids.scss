@@ -86,7 +86,6 @@
         clear: both; /* [2] */
     }
 
-
     /**
      * GRID COLUMNS
      * 
@@ -119,9 +118,10 @@
  * Cell unit for testing
  */
 .cell {
-    background-color: rgba(150,0,0,.06);
+    @include responsive-grid-color($overlay-color-collection);
+    opacity: .8;
     border: 1px solid #bbb;
-    color: rgba(150,0,0,.6);
+    color: white;
     font-family: monaco;
     font-size: 12px;
     margin-bottom: $gutter;

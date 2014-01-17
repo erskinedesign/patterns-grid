@@ -11,7 +11,7 @@
    ========================================================================== */
 /**
  * <div class="grid--overlay">
- * 	@grid module
+ *  @grid module
  * </div>
  */
 
@@ -36,27 +36,29 @@
  */
 
 .grid--overlay {
-	position: absolute; /* [1] */
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	pointer-events: none;
-	z-index: -1;
+    position: absolute; /* [1] */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
 }
-	
-	.grid__container {
+    
+    .grid__container {
 
-	}
+    }
 
-	.grid--overlay__column {
+    .grid--overlay__column {
 
-	}
+    }
 
-	.grid--overlay__cell {
-		background-color: rgba(150,0,0,.02);
-		border: 1px solid rgba(150,0,0,.09);
-		border: none;
-		height: 9999px;
-	}
+    .grid--overlay__cell {
+        border: none;
+        height: 9999px;
+        opacity: .3;
+        @include responsive-grid-color($overlay-color-collection);
+    }
+
+

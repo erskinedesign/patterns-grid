@@ -45,117 +45,16 @@
             <div class="grid__container">
                 <div class="grid__column">
                     <h3>Grid column</h3>
-                    <p>By default a <code>.grid__column</code> is 100% of the width of the <code>.grid__container</code>. Gutters are fixed width, but can change depending on the breakpoint.</p>
+                    <p>By default a <code>.grid__column</code> is 100% of the width of the <code>.grid__container</code>. Gutters are fixed width, but can change depending on the breakpoint. A <code>.grid__column</code> has many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container.</p>
+
+                    <p>Columns can be aligned to the right with the <code>.grid__column--right</code> class. Due to the way that floats are handled by CSS, sometimes we’ll need to add extra <code>.grid</code> objects in order to clear columns properly.</p>
                 </div>
                 <div class="grid__column">
                     <div class="cell">.grid__column</div>
                 </div><!-- //.grid__column -->
             </div>
-        </div>
-
-        <div class="grid">
-
-            <div class="grid__container">
-                <div class="grid__column">
-                    <h3>Fluid grid columns</h3>
-                    <p>A <code>.grid__column</code> has many modifiers available for sizing the various units within. The width of each is dependent on the number of columns set and the width of the container.</p>
-                </div>
-            </div>
-
-            <div class="grid__container">
-
-                <div class="grid__column">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--5">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--2">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--3">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column
-                            grid__column--8">
-                    <div class="cell"></div>
-                </div>
-
-                <div class="grid__column 
-                            grid__column--2">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--2">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--8">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--5">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--2">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--3">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column
-                            grid__column--8">
-                    <div class="cell"></div>
-                </div>
-
-                <div class="grid__column 
-                            grid__column--2">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--2">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column 
-                            grid__column--8">
-                    <div class="cell"></div>
-                </div><!-- //.grid__column -->
-
-            </div><!-- //.grid__container -->
-        </div><!-- //.grid -->
 
 
-        <div class="grid">
-            <div class="grid__container">
-                <div class="grid__column">
-                    <h3>Aligning columns</h3>
-                    <p>Columns can be aligned to the right with the <code>.grid__column--right</code> class. Due to the way that floats are handled by CSS, sometimes we’ll need to add extra <code>.grid</code> objects in order to clear columns properly.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid">
             <div class="grid__container">
                     <div class="grid__column 
                             grid__column--4">
@@ -170,10 +69,7 @@
 
 
             </div><!-- //.grid__container -->
-        </div><!--//.grid -->
 
-
-        <div class="grid">
             <div class="grid__container">
                 <div class="grid__column 
                             grid__column--5">
@@ -185,17 +81,100 @@
                             grid__column--right">
                     <div class="cell">.grid__column--4 .grid__column--right</div>
                 </div><!-- //.grid__column -->
-            </div>
-        </div>
+            </div><!-- //.grid__container -->
+
+            <div class="grid__container">
+
+                <div class="grid__column">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--5">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--3">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--8">
+                    <div class="cell"></div>
+                </div>
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--8">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--5">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--3">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column
+                            grid__column--8">
+                    <div class="cell"></div>
+                </div>
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--2">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+                <div class="grid__column 
+                            grid__column--8">
+                    <div class="cell"></div>
+                </div><!-- //.grid__column -->
+
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
 
 
+    
 
         <div class="grid">
             <div class="grid__container">
 
                 <div class="grid__column">
                     <h3>Responsive columns</h3>
-                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid. For instance if a design component needed to be small width at mobile, wide at tablet and then large again at desktop, that is completely possible within this system.</p>
+                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid. For instance if a design component needed to be small width at mobile, wide at tablet and then large again at desktop, that is completely possible within this system. For instance <code>.grid__column--8--medium</code> followed by <code>.grid__column--6--large</code>. This system allows for an enormous number of design decisions to be made between these breakpoints.</p>
 
                 </div><!-- //.grid__column -->
                 
@@ -203,6 +182,25 @@
         </div><!-- //.grid -->
 
         <div class="grid">
+
+            <div class="grid__container">
+                <div class="grid__column 
+                                grid__column--10
+                                grid__column--9--small
+                                grid__column--8--medium
+                                grid__column--7--large
+                                grid__column--6--largest">
+                        <div class="cell">
+<pre>.grid__column
+.grid__column--10
+.grid__column--9--small
+.grid__column--8--medium
+.grid__column--7--large
+.grid__column--6--largest</pre>
+                        </div>
+                    </div>
+            </div>
+
             <div class="grid__container">
                 <div class="grid__column 
                             grid__column--9
@@ -359,77 +357,94 @@
         </div><!-- //.grid -->
 
         <div class="grid">
-            <div class="grid__container">
+            <div class="grid__container grid__container--subgrid">
                 <div class="grid__column">
                     <h3>Nesting grids</h3>
                     <p>Filed under cool story, bro</p>
                 </div>
 
-                <div class="grid__column">
-                    <div class="cell">.grid__column</div>
+                <div class="grid__column grid__column--5">
 
-                    <div class="grid__column grid__column--3">
-                        <div class="cell">nested column</div>
-                    </div>
+                    <div class="island island--dark">
+                        <div class="island__container">
+                            <h4>Title of a box</h4>
+                            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he. </p>  
+                        </div><!-- //.island__container -->
 
-                    <div class="grid__column grid__column--3">
-                        <div class="cell">nested column</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <div class="grid__container">
+                            <div class="grid__subgrid">
+
+                                <div class="grid__column grid__column--2">
+                                    <div class="island island--light">
+                                        <div class="island__container">
+                                            A link to something.
+                                        </div><!-- //.island -->
+                                    </div><!-- //.island__container -->
+                                </div><!-- //.grid__column -->
+                            </div>
+                            <div class="grid__subgrid">
+                                <div class="grid__column grid__column--2">
+                                    <div class="island island--light">
+
+                                        <div class="island__container">
+                                            A link to something.
+                                        </div><!-- //.island -->
+
+                                    </div><!-- //.island__container -->
+                                </div><!-- //.grid__column -->
+                            </div>
+
+                            <div class="grid__subgrid">
+                                <div class="grid__column grid__column--1">
+                                    <div class="island island--light">
+
+                                        <div class="island__container">
+                                            A link.
+                                        </div><!-- //.island -->
+
+                                    </div><!-- //.island__container -->
+                                </div><!-- //.grid__column -->
+                            </div><!-- //.subgrid -->
+                        </div><!-- //.grid__container -->
+                    </div><!-- //.island -->
+
+                </div><!-- //.grid__column -->
+
+
+            </div><!-- //.grid__container -->
+        </div><!-- //.grid -->
 
 
         <div class="grid">
             <div class="grid__container">
                 <h3>Pushing a column left or right</h3>
-                <p>Columns can be pushed either left or right of the grid container. In order to push a column to the right the <code>grid__column--right</code> class must be added first.</p>
+                <p>Columns can be pushed either left or right of the grid container. Since all columns float left by default, the <code>grid__column--right</code> class must be added in order to float columns to the right.</p>
                 
                 <div class="grid__column
                             grid__column--10
                             push--left-1">
                         <div class="cell">
-                            <pre>.grid__column--10
-.push--left-1</pre>
+                            <pre>.push--left-1</pre>
                         </div>
                 </div><!-- //.grid__column -->
             </div><!-- //.grid__container -->
 
             <div class="grid__container">
                 <div class="grid__column
-                            grid__column--10
-                            grid__column--right
-                            push--right-1">
-                        <div class="cell">
-                            <pre>.grid__column--right
-.push--right--1</pre>
-                        </div>
-                </div><!-- //.grid__column -->
-
-                 <div class="grid__column
-                            grid__column--1
-                            push--left-1">
-                        <div class="cell">.push--left-1</div>
+                                grid__column--10
+                                grid__column--right
+                                push--right-1">
+                            <div class="cell">
+                                <pre>.grid__column--right
+.push--right-1</pre>
+                            </div>
                 </div><!-- //.grid__column -->
             </div><!-- //.grid__container -->
 
             <div class="grid__container">
-
-                <div class="grid__column
-                            grid__column--5
-                            push--left-2">
-                        <div class="cell">.push--left-2</div>
-                </div><!-- //.grid__column -->
-
-                <div class="grid__column
-                            grid__column--2
-                            grid__column--7--large">
-                        <div class="cell">.grid__column--2</div>
-                </div><!-- //.grid__column -->
-
-
                 <div class="grid__column">
-                    <p>These classes can be modified depending on the viewport, for instance we can push a column to the left on mobile and then to the right on another breakpoint if the design requires it.</p>
+                    <h3>Pushing at different viewports</h3>
+                    <p>These classes can be modified depending on the viewport, for instance we can push a column to the left on mobile and then to the right on another breakpoint if the design requires it. First we set the width of the column then the direction and then how much to push by.</p>
                 </div>
             </div><!-- //.grid__container -->
 
@@ -446,6 +461,40 @@
                             grid__column--left--medium
                             push--left-1--medium
 
+                            grid__column--5--large
+                            grid__column--right--large
+                            push--right-1--large">
+                        <div class="cell"><pre>.grid__column--10
+.push--left-2
+.grid__column--5--small
+.grid__column--right--small
+.push--right-1--small
+
+.grid__column--8--medium
+.grid__column--left--medium
+.push--left-1--medium
+
+.grid__column--5--large
+.grid__column--right--large
+.push--right-1--large
+</pre>
+                        </div>
+                </div><!-- //.grid__column -->
+            </div>
+
+            <div class="grid__container">
+                <div class="grid__column
+                            grid__column--10
+                            push--left-2
+
+                            grid__column--5--small
+                            grid__column--right--small
+                            push--right-1--small
+
+                            grid__column--8--medium
+                            grid__column--left--medium
+                            push--left-1--medium
+
                             grid__column--2--large
                             grid__column--right--large
                             push--right-1--large">
@@ -472,6 +521,7 @@
                         <div class="cell"></div>
                 </div><!-- //.grid__column -->
             </div>
+            <!-- //.grid__container -->
             <div class="grid__container">
                 <div class="grid__column
                             grid__column--10
@@ -495,10 +545,9 @@
             <div class="grid__container">
                 <div class="grid__column">
                     <h3>Pushing in both directions</h3>
-                    <p>Pushing in both directions is possible with the <code>.push--both</code> modifier class. This will always override any of the <code>.grid__column</code> classes.</p>
+                    <p>Pushing in both directions is possible with the <code>.push--both</code> modifier class. This will always override any of the set widths in the <code>.grid__column</code> classes because in order for this to work the module must be more than 100% wide.</p>
                 </div>
                 <div class="grid__column
-                            grid__column--1
                             push--both-1">
                     <div class="cell">.push--both-1</div>
                 </div>
