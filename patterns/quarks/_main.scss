@@ -9,11 +9,13 @@ body {
     position: relative;
     color: #333;
     padding-top: 20px;
+    font-size: 100%;
 }
 
 
 /**
- * !REMOVE this after testing
+ * Testing island for showing how nested grids work, remove
+ * this before production.
  */
 
 .island {
@@ -22,7 +24,7 @@ body {
     @include pie-clearfix();
 
     h4 {
-        color: white;
+        color: #666;
         font-weight: bold;
     }
 }
@@ -32,10 +34,10 @@ body {
 }
 
 .island--dark {
-    background-color: #333;
-    border: 1px solid #222;
+    background-color: rgba(255,255,255,.5);
+    border: 1px solid rgba(0,0,0,.3);
 }
 
 .island--light {
-    background-color: #555;
+    background-color: rgba(0,0,0,.1);
 }

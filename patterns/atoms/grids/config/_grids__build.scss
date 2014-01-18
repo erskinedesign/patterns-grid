@@ -102,10 +102,17 @@
    BUILD SUBGRID
    ========================================================================== */
 /**
-* Untested hack! Ultimately what we want to do is preserve column width--3 
-* inside a column width 5. The only way to do this is to create a gnarly bit of code
-* whereby a div sits outside the element and tricks the children that it’s a full width
-* grid column.
+* In order to have nested grids we need to use a nasty hack. First we encapsulate a 
+* nested .grid__column in the .subgrid class. Then we use the whacky box model to cheat
+* the child column into thinking that it’s parent (the subgrid) is actually the full 
+* width of the grid.
+*
+* # of columns / (parent column width / # of columns) * 100 = subgrid width
+*
+*
+* Unfortunately we have to do this for every grid level and breakpoint which bloats the 
+* compiled CSS enormously. Use this only with a worflow like UNCSS that removes
+* unused styles.
 */
 
 @mixin build-subgrid($num) {
@@ -120,9 +127,46 @@
 }
 
 
+/**
+ * Generates breakpoint classes depending on no. of levels
+ */
+@mixin responsive-subgrid($num: 1, $level: "") {
+    @if ($level == "") {
+        @include build-subgrid($num);
+    }
 
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-subgrid($num);
+        }
+    }
 
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-subgrid($num);
+        }
+    }
 
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-subgrid($num);
+        }
+    }
+
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-subgrid($num);
+        }
+    }
+}
+
+@each $level in $grid__levels {
+    @for $i from 1 through $columns {
+        .grid__column--#{$i}--#{$level} .grid__subgrid {
+            @include responsive-subgrid($i, $level);
+        }
+    }
+}
 
 
 
@@ -132,7 +176,7 @@
    $PUSH-COLUMNS
    ========================================================================== */
 /*
- * Generates classes for pushing a column left or right.
+ * Generates all of the classes for pushing a column left or right.
  */
 
 

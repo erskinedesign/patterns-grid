@@ -118,10 +118,11 @@
  * Cell unit for testing
  */
 .cell {
-    @include responsive-grid-color($overlay-color-collection);
-    opacity: .8;
-    border: 1px solid #bbb;
-    color: white;
+    background-color: rgba(255,255,255, 0.8);
+    opacity: .6;
+    border: 1px solid #999;
+    color: black;
+    line-height: 1.4;
     font-family: monaco;
     font-size: 12px;
     margin-bottom: $gutter;

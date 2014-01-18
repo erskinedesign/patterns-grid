@@ -25,7 +25,7 @@
             <div class="grid__container">
                 <div class="grid__column">
                     <h3>Grid</h3>
-                    <p>The <code>.grid</code> class sets a max-width alongside default margins and padding.</p>
+                    <p>The <code>.grid</code> class sets a max-width for the breakpoint alongside default margins and padding.</p>
                 </div>
             </div>
             <div class="cell">.grid</div>
@@ -45,7 +45,9 @@
             <div class="grid__container">
                 <div class="grid__column">
                     <h3>Grid column</h3>
-                    <p>By default a <code>.grid__column</code> is 100% of the width of the <code>.grid__container</code>. Gutters are fixed width, but can change depending on the breakpoint. A <code>.grid__column</code> has many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container.</p>
+                    <p>By default a <code>.grid__column</code> is 100% of the width of the <code>.grid__container</code>. These columns has many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container.</p>
+
+                    <p>Gutters are fixed width, but can change depending on the breakpoint.</p>
 
                     <p>Columns can be aligned to the right with the <code>.grid__column--right</code> class. Due to the way that floats are handled by CSS, sometimes we’ll need to add extra <code>.grid</code> objects in order to clear columns properly.</p>
                 </div>
@@ -360,15 +362,21 @@
             <div class="grid__container grid__container--subgrid">
                 <div class="grid__column">
                     <h3>Nesting grids</h3>
-                    <p>Filed under cool story, bro</p>
+                    <p>In order to have nested grids we need to use a nasty hack. First we encapsulate a nested <code>.grid__column</code> with the <code>.subgrid</code> class. Then we use the whacky box model to cheat the child column into thinking that its parent (the subgrid) is actually the width of the full grid__container.</p>
+
+                    <p>This way we’ll always know that a <code>grid__column--2</code> will always be 2 columns, regardless of whether it’s nested or not. Due to the crazy amount of CSS this creates you can only nest the grid once.</p>
                 </div>
 
-                <div class="grid__column grid__column--5">
+                <div class="grid__column 
+                            grid__column--10
+                            grid__column--9--small
+                            grid__column--8--medium
+                            grid__column--7--large">
 
                     <div class="island island--dark">
                         <div class="island__container">
                             <h4>Title of a box</h4>
-                            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one,” he. </p>  
+                            <p>In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. “Whenever you feel like criticizing any one.” </p>  
                         </div><!-- //.island__container -->
 
                         <div class="grid__container">
@@ -377,17 +385,18 @@
                                 <div class="grid__column grid__column--2">
                                     <div class="island island--light">
                                         <div class="island__container">
-                                            A link to something.
-                                        </div><!-- //.island -->
+                                            2.
+                                        </div>
                                     </div><!-- //.island__container -->
                                 </div><!-- //.grid__column -->
                             </div>
+
                             <div class="grid__subgrid">
                                 <div class="grid__column grid__column--2">
                                     <div class="island island--light">
 
                                         <div class="island__container">
-                                            A link to something.
+                                            2.
                                         </div><!-- //.island -->
 
                                     </div><!-- //.island__container -->
@@ -399,12 +408,28 @@
                                     <div class="island island--light">
 
                                         <div class="island__container">
-                                            A link.
+                                            1 
                                         </div><!-- //.island -->
 
                                     </div><!-- //.island__container -->
                                 </div><!-- //.grid__column -->
                             </div><!-- //.subgrid -->
+
+                            <div class="grid__subgrid">
+                                <div class="grid__column 
+                                            grid__column--3
+                                            grid__column--4--small
+                                            grid__column--3--medium
+                                            grid__column--2--large">
+                                    <div class="island island--light">
+
+                                        <div class="island__container">
+                                            3-4-3-2
+                                        </div><!-- //.island -->
+
+                                    </div><!-- //.island__container -->
+                                </div><!-- //.grid__column -->
+                            </div>
                         </div><!-- //.grid__container -->
                     </div><!-- //.island -->
 
@@ -444,7 +469,7 @@
             <div class="grid__container">
                 <div class="grid__column">
                     <h3>Pushing at different viewports</h3>
-                    <p>These classes can be modified depending on the viewport, for instance we can push a column to the left on mobile and then to the right on another breakpoint if the design requires it. First we set the width of the column then the direction and then how much to push by.</p>
+                    <p>These classes can be modified depending on the viewport, for instance we can push a column to the left on mobile and then to the right on another breakpoint if the design requires it. First we set the width of the column, followed by the direction and how much to push the column by.</p>
                 </div>
             </div><!-- //.grid__container -->
 
@@ -563,7 +588,7 @@
         <div class="grid">
             <div class="grid__container">
                 <h3>Full width cells</h3>
-                <p>If a module is not inside the grid then it will naturally be 100% of the viewport.</p>
+                <p>If a module is not inside the grid then it will naturally be 100% of the viewport. If possible, all modules should automatically fill up the parent element by default. This way we’ll know precisely how to modify the width of the element – by changing the grid classes on its parent container.</p>
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
 
