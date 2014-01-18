@@ -116,7 +116,7 @@
 */
 
 @mixin build-subgrid($num) {
-    width: percentage($columns / ($num / $columns) / 10);
+    width: percentage($columns / ($num / $columns) / $columns);
 }
 
 
@@ -470,6 +470,17 @@ $directions: left, right;
 
 
 
+
+/**
+ * String function that surronds "" around a variable, this is useful 
+ * for adding variables to a pseudo element’s content. Used for adding
+ * the number of columns to the body.
+ */
+@function string($number) {
+    $number: $number + "";
+
+    @return $number;
+}
 
 
 

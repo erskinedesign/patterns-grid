@@ -9,9 +9,22 @@
 $gutter: 10px;
 
 /* Set number of columns */
-$columns: 10;
+$columns: 12;
 
 
+/* 
+ * Set breakpoints
+ * 
+ * If these values change then the mixins in grids__build will also need 
+ * to be updated with the new values.
+*/
 $grid__levels: small, medium, large, largest;
 
+
+
+/**
+ * Set the grid overlay colors of the breakpoints.
+ */
 $overlay-color-collection: (#99CCFF, #D5F0CC, #F0F099, #FFCC99, #FFCCCC);
+
+

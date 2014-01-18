@@ -24,16 +24,25 @@
  * 2. grid__column generator script.
  */
 
-
-
-
-
 /* 
    $OVERLAY
    ========================================================================== */
 /**
  * 1. Requires relative position on the body element.
  */
+
+
+
+/**
+ * Adds the number of strings to the pseudo element so that we can 
+ * automatically generate the number of columns with JS.
+ */
+.grid--overlay-active {
+    &:after {
+        content: string($columns);
+    }
+}
+
 
 .grid--overlay {
     position: absolute; /* [1] */
@@ -46,19 +55,17 @@
     z-index: -1;
 }
     
-    .grid__container {
-
-    }
-
-    .grid--overlay__column {
-
-    }
-
     .grid--overlay__cell {
         border: none;
         height: 9999px;
         opacity: .3;
         @include responsive-grid-color($overlay-color-collection);
     }
+
+
+
+
+
+
 
 
