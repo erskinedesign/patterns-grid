@@ -34,25 +34,39 @@
 
 
 /**
- * Adds the number of strings to the pseudo element so that we can 
- * automatically generate the number of columns with JS.
+ * GRID OVERLAY ACTIVATE
+ * 
+ * 1. Adds the number of columns to the pseudo element so that we can 
+ * automatically create the number of div columns we need with JS.
  */
-.grid--overlay-active {
+.grid--overlay--active {
     &:after {
-        content: string($columns);
+        content: string($columns); /* [1] */
     }
 }
 
+/**
+ * GRID OVERLAY
+ * 
+ * 1. Hide the overlay by default.
+ * 2. Position the overlay over the page.
+ * 3. Once the grid overlay class is active, display the overlay.
+ */
 
 .grid--overlay {
-    position: absolute; /* [1] */
-    top: 0;
-    left: 0;
-    height: 100%;
+    // display: none; /* [1] */
+    position: absolute; /* [2] */
+    top: 0; /* [2] */
+    left: 0; /* [2] */
+    height: 100%; 
     width: 100%;
     overflow: hidden;
     pointer-events: none;
     z-index: -1;
+
+   // .grid--overlay--active & {
+   //          display: block; /* [3] */
+   //  }
 }
     
     .grid--overlay__cell {
@@ -61,7 +75,6 @@
         opacity: .3;
         @include responsive-grid-color($overlay-color-collection);
     }
-
 
 
 

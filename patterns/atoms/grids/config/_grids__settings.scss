@@ -6,7 +6,8 @@
  */
 
 /* Default gutter size */ 
-$gutter: 10px;
+$gutter: 15px;
+$gutter--large: 25px;
 
 /* Set number of columns */
 $columns: 12;
@@ -20,6 +21,7 @@ $columns: 12;
 */
 $grid__levels: small, medium, large, largest;
 
+$breakpoint-names: a, b, c, d, e;
 
 
 /**

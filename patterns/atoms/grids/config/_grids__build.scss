@@ -2,25 +2,22 @@
    $GRID-BUILD
    ========================================================================== */
 /**
- * Functions and mixins necessary for building the grid
+ * Functions and mixins necessary for building the grid.
  */
 
-// $grid__base-width: 315 !default;
 
-// Why do we need to know the base width?
-// $grid__col-width: 10 !default; 
-// $grid__gutter: 15 !default;
+/* 
+   $CONTENT
+   ========================================================================== */
+/**
+ * 1. Build columns
+ */
 
-
-
-// The overlay images should be automatically generated with JS from the original breakpoints and the number of columns.
 
 
 
 /* 
-   BUILD COLUMNS
-   ========================================================================== */
-/**
+ * 1.BUILD COLUMNS
  * Sets the width of columns depending on the total number of them.
  */
 
@@ -28,17 +25,14 @@
     width: percentage(($num / $columns));
 }
 
-/**
- * Generate default column sizes with no breakpoints
- *
- * .grid__column--4 {
- *     width: @result;
- * }
- */
-
+/* by default all grid columns are full width */  
 .grid__column {
-    width: 100%; /* by default all grid columns are full width */  
+    width: 100%; 
 }
+
+/**
+ * Generate default column sizes from 1 - total # of columns.
+ */
 
 @for $i from 1 through $columns {
     .grid__column--#{$i} {
