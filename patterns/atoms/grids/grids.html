@@ -62,10 +62,8 @@
         <div class="grid">
             <div class="grid__container">
                 <div class="grid__column">
-                    <h3>Grid column</h3>
-                    <p>By default a <code>.grid__column</code> is 100% of the width of the <code>.grid__container</code>. These columns has many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container.</p>
-
-                    <p>Gutters are fixed width, but can change depending on the breakpoint.</p>
+                    <h3>Grid columns</h3>
+                    <p>By default a <code>.grid__column</code> is 100% of the width of the <code>.grid__container</code>. These columns have many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container itself.</p>
 
                     <p>Columns can be aligned to the right with the <code>.grid__column--right</code> class. Due to the way that floats are handled by CSS, sometimes we’ll need to add extra <code>.grid</code> objects in order to clear columns properly.</p>
                 </div>
@@ -181,12 +179,73 @@
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
 
+
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column">
+                    <h3>Fixed gutters</h3>
+                    <p>Gutters are fixed width, but can change depending on the breakpoint. In this example the gutter is increased to 25px at Breakpoint D and above.</p>
+                </div>
+
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="grid">
             <div class="grid__container">
 
                 <div class="grid__column">
                     <h3>Responsive columns</h3>
-                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid. For instance if a design component needed to be small width at mobile, wide at tablet and then large again at desktop, that is completely possible within this system. For instance <code>.grid__column--8--medium</code> followed by <code>.grid__column--6--large</code>. This system allows for an enormous number of design decisions to be made between these breakpoints.</p>
+                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid, for instance if a design component needed to be small width at mobile, wide at tablet and then large again at desktop. First the developer would specify the class <code>.grid__column--8--medium</code> followed by <code>.grid__column--6--large</code>. This system allows for an enormous number of design decisions to be made between these breakpoints.</p>
 
                 </div><!-- //.grid__column -->
                 
@@ -502,6 +561,7 @@
                             push--right-1--large">
                         <div class="cell"><pre>.grid__column--10
 .push--left-2
+
 .grid__column--5--small
 .grid__column--right--small
 .push--right-1--small
