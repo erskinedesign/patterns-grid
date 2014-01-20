@@ -419,53 +419,72 @@ $directions: left, right;
 }
 
 
+
+
 /* 
     CENTERING GRID COLUMNS
     ========================================================================== */
 /**
- * These mixins generate the classes for centering columns at various breakpoints.
+ * ROBIN: all you need to do is reverse the build push both mixin for this bit, you big dope.
  */
 
-@mixin build-grid-center {
-    float: none;
-    margin: 0 auto;
-}
+// @mixin build-grid-center($num) {
+//     float: left;
+//     left: (percentage(($num / $columns))) / 2;
+//     position: relative;
+//     @include rems(margin-left, -$gutter);
 
-@mixin responsive-grid-center($level){
-     @if ($level == "") {
-        @include build-grid-center();
-    }
+//     @include respond-to("large and above"){
+//         @include rems(margin-left, -$gutter--large);        
+//     }
+// }
 
-    @if ($level == "small") {
-        @include respond-to("small and above"){
-            @include build-grid-center();
-        }
-    }
+// @for $i from 1 through $columns {
+//     .grid__column--center--#{$i} {
+//         @include build-grid-center($i);
+//     }
+// }
 
-    @if ($level == "medium") {
-        @include respond-to("medium and above"){
-            @include build-grid-center();
-        }
-    }
+// @mixin responsive-grid-center($level, $num: 1){
+//      @if ($level == "") {
+//         @include build-grid-center($num);
+//     }
 
-    @if ($level == "large") {
-        @include respond-to("large and above"){
-            @include build-grid-center();
-        }
-    }
+//     @if ($level == "small") {
+//         @include respond-to("small and above"){
+//             @include build-grid-center($num);
+//         }
+//     }
 
-    @if ($level == "largest") {
-        @include respond-to("largest only"){
-            @include build-grid-center();
-        }
-    }
-}
+//     @if ($level == "medium") {
+//         @include respond-to("medium and above"){
+//             @include build-grid-center($num);
+//         }
+//     }
 
-@each $level in $grid__levels {
-    .grid__column.grid__column--center--#{$level} {
-        @include responsive-grid-center($level);
-    }
-}
+//     @if ($level == "large") {
+//         @include respond-to("large and above"){
+//             @include build-grid-center($num);
+//         }
+//     }
+
+//     @if ($level == "largest") {
+//         @include respond-to("largest only"){
+//             @include build-grid-center($num);
+//         }
+//     }
+// }
+
+/* Push both classes */
+// @each $level in $grid__levels {
+//     @for $i from 1 through $columns {
+//         .grid__column.grid__column--center--#{$i}--#{$level}{
+//             @include responsive-grid-center($i, $level);
+//         }
+//     }
+// }
+
+
 
 /* 
     GRID OVERLAY BG COLOR   

@@ -121,9 +121,20 @@
             float: right;
         }
 
+        /**
+         * Centering grid columns 
+         *
+         * 1. Aligns centered columns to the grid. 
+         */
         .grid__column--center {
-            float: none;
-            margin: 0 auto;
+            // float: none;
+            // margin: 0 auto;
+            // @include rems(padding-left, $gutter); /* [1] */
+            // padding-right: 0; /* [1] */
+
+            // @include respond-to("large and above"){
+            //     @include rems(padding-left, $gutter--large); /* [1] */
+            // }
         }
 
 
