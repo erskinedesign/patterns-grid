@@ -39,11 +39,21 @@
  * 1. Adds the number of columns to the pseudo element so that we can 
  * automatically create the number of div columns we need with JS.
  */
-.grid--overlay--active {
-    &:after {
-        content: string($columns); /* [1] */
-    }
+
+body:after {
+    content: string($columns); /* [1] */
+    display: none;
 }
+    
+    /**
+     * Attach this class to the body element and then change the color of the test cells within
+     */
+    .grid--overlay--active {
+        .cell {
+            background-color: rgba(255,255,255, 0.7);
+            opacity: .6;
+        }   
+    }
 
 /**
  * GRID OVERLAY
@@ -54,7 +64,7 @@
  */
 
 .grid--overlay {
-    // display: none; /* [1] */
+    display: none; /* [1] */
     position: absolute; /* [2] */
     top: 0; /* [2] */
     left: 0; /* [2] */
@@ -64,18 +74,20 @@
     pointer-events: none;
     z-index: -1;
 
-   // .grid--overlay--active & {
-   //          display: block; /* [3] */
-   //  }
-}
-    
+   .grid--overlay--active & {
+        display: block; /* [3] */
+    }
+
     .grid--overlay__cell {
         border: none;
         height: 9999px;
         opacity: .3;
         @include responsive-grid-color($overlay-color-collection);
     }
+}
 
+
+    
 
 
 

@@ -7,21 +7,13 @@
         <title>Grid system</title>
         <link rel="stylesheet" href="../../../reset.css">
         <link rel="stylesheet" href="../../../screen.css">
+        <script src="scripts/grid-toggle.js"></script>
     </head>
 
     <body>
         
         <div class="grid">
             <div class="grid__container">
-                <div class="grid__column 
-                            grid__column--6
-                            grid__column--5--small
-                            grid__column--4--medium
-                            grid__column--2--largest">
-                    <div class="grid--breakpoint">Breakpoint</div>
-                </div><!-- //.grid__column -->
-
-
                 <div class="grid__column">
                     <h1>EDX Grid pattern</h1>
                     <h2>A customisable, fully responsive grid system with multiple breakpoints.</h2>
@@ -36,6 +28,11 @@
                     <h3>Custom breakpoints</h3>
                     <p>In this example there are five distinct breakpoints available, although we can add or subtract breakpoints whenever necessary. The width of these breakpoints are entirely dependent on the dimensions of the viewport.</p>
                 </div>
+
+                <div class="grid__column 
+                            grid__column--12">
+                    <div class="grid--breakpoint">Breakpoint</div>
+                </div><!-- //.grid__column -->
             </div>
         </div>
 
@@ -667,52 +664,7 @@
         <div class="cell">Full-width cell</div>
 
 
-        <div class="grid--overlay">
-
-            <div class="grid">
-                <div class="grid__container">
-
-                    <!-- Create number of divs depending on the number of $columns -->
-
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                    <div class="grid__column grid__column--1 grid--overlay__column">
-                        <div class="cell grid--overlay__cell"></div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- //.grid-overlay -->
+        
 
     </body>
 
