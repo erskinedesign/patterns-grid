@@ -5,7 +5,7 @@
 /**
  * Sets initial font-sizes. 
  * 
- * This is only an example type stylesheet for the grid module.
+ * This is only an example type stylesheet to show off the grid module.
  */
 
 h1,
@@ -21,6 +21,8 @@ h1 {
 	font-size: 45px;
 	font-weight: bold;
 	line-height: 1;
+	margin-bottom: 4px;
+	color: #222;
 }
 
 h2 {
@@ -31,13 +33,29 @@ h2 {
 }
 
 h3 {
-	font-size: 20px;
+	font-size: 22px;
 	font-weight: bold;
 	margin-top: 30px;
+	margin-bottom: 3px;
+	color:#222;
+
+	@include respond-to("large and above"){
+		margin-top: 40px;
+	}
 }
 
 p {
-	font-size: 15px;
-	line-height: 1.5;
-	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 1.55;
+	margin-bottom: 16px;
+}
+
+code {
+    font-family: "Monaco";
+    font-size: 12px;
+    color: #666;
+    padding: 0 5px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    background-color: #eee;
 }

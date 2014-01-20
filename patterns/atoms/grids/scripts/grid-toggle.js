@@ -1,3 +1,14 @@
+/* ==========================================================================
+   GRID-TOGGLE.JS
+   ========================================================================== */
+/**
+ * A script for automatically showing the .grid--overlay and automatically 
+ * generating the number of grid columns.
+ *
+ * No jQuery is necessary for this module to work properly.
+ */
+
+
 document.addEventListener("DOMContentLoaded", function(){
     
     var body= document.querySelector('body');
@@ -21,35 +32,21 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 
-
-
-
-    /**
-     * Depending on number of columns attached to the pseudo element, create divs with columns.
-     */
-
-
-    
-    /* Add the overlay */
+    /* Append the overlay to the body element */
     body.innerHTML+= overlay;
     overlay = document.querySelector('.grid--overlay');
-
     grid__container = overlay.children[0].children[0];
     
 
 
 
-
-
-
-    /* Find the number of columns from the body, build them and append to grid container */
-
+    /* Find the number of columns from the body’s pseudo element */
     var columns_count = getComputedStyle(body, ':after').content;
     yourstring = columns_count.replace(/'/g, "");
 
-
+    
+    /* Iterate and append to grid container */
     for (i= 1; i <= yourstring; i++) {
-        
         grid__container.insertAdjacentHTML('beforeend', column);
     }
 

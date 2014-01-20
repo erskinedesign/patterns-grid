@@ -11,13 +11,20 @@
 /* 
    $CONTENTS
    ========================================================================== */
+/**
+ * 1. Third party dependencies.
+ * 2. Global variables and configuration settings.
+ * 3. Utilities such as mixins and functions.
+ * 4. Quarks: default styles for standard markup elements.
+ * 5. Atoms: CSS objects and relationships.
+ */
 
 
 
-
+$legacy-support-for-ie: false; // for some reason this seems to need to be here rather than in _config.scss
 
 /* 
-   $THIRD PARTY DEPENDENCIES
+   1.THIRD PARTY DEPENDENCIES
    ========================================================================== */
 @import "compass";
 @import "breakpoint";
@@ -26,14 +33,23 @@
 
 
 /* 
-   $GLOBAL-CONFIG
+   2.GLOBAL-CONFIG
    ========================================================================== */
 @import "global-config";
 
 
 
+
 /* 
-   $QUARKS
+   3.UTILITIES
+   ========================================================================== */
+@import "utilities/mixins";
+
+
+
+
+/* 
+   4.QUARKS
    ========================================================================== */
 /**
  * Default styling of plain HTML elements such as html, body, p tags etc.
@@ -43,8 +59,9 @@
 
 
 
+
 /* 
-   $ATOMS
+   5.ATOMS
    ========================================================================== */
 /**
  * CSS objects

@@ -58,20 +58,19 @@
 .grid {
     @include pie-clearfix(); /* [1] */
     display: block;
-    max-width: 850px; /* [2] */
+    @include rems(max-width, 850); /* [2] */
     width: 95%; /* [3] */
     margin: 0 auto; /* [3] */
 
     /**
      * Breakpoint specific styles go here.
      */
-    
     @include respond-to("medium and above"){
-        max-width: 600px;
+        @include rems(max-width, 600);
     }
 
     @include respond-to("largest only"){
-        max-width: 1200px;
+        @include rems(max-width, 1000);
     }
 }
 
@@ -84,11 +83,11 @@
      * 3. At large sizes increase the gutter size.
      */
     .grid__container {
-        margin-right: -$gutter; /* [1] */
+        @include rems(margin-right, -$gutter); /* [1] */
         clear: both; /* [2] */
 
         @include respond-to("large and above"){
-            margin-right: -$gutter--large; /* [3] */
+            @include rems(margin-right, -$gutter--large); /* [3] */
         }
     }
 
@@ -104,17 +103,17 @@
             -moz-box-sizing: border-box; /* [1] */
             box-sizing: border-box; /* [1] */
             vertical-align: top; /* [2] */
-            padding-right: $gutter; /* [3] */
+            @include rems(padding-right, $gutter); /* [3] */
             float: left;
 
             @include respond-to("large and above"){
-                padding-right: $gutter--large; /* [4] */
+                @include rems(padding-right, $gutter--large); /* [4] */
             }
         }
 
         /**
          * Grid columns naturally float from the left, but sometimes 
-         * we’ll need class to float to the right too. These are generated
+         * we’ll need classes to float to the right too. These are generated
          * by the build step.
          */
 
@@ -138,9 +137,10 @@
     line-height: 1.4;
     font-family: monaco;
     font-size: 12px;
-    margin-bottom: $gutter;
+    @include rems(margin-bottom, $gutter);
+    @include rems(padding-top, $gutter);
+    @include rems(padding-bottom, $gutter);
     display: block;
-    padding: $gutter 0;
     clear: both;
 }
 
