@@ -419,6 +419,53 @@ $directions: left, right;
 }
 
 
+/* 
+    CENTERING GRID COLUMNS
+    ========================================================================== */
+/**
+ * These mixins generate the classes for centering columns at various breakpoints.
+ */
+
+@mixin build-grid-center {
+    float: none;
+    margin: 0 auto;
+}
+
+@mixin responsive-grid-center($level){
+     @if ($level == "") {
+        @include build-grid-center();
+    }
+
+    @if ($level == "small") {
+        @include respond-to("small and above"){
+            @include build-grid-center();
+        }
+    }
+
+    @if ($level == "medium") {
+        @include respond-to("medium and above"){
+            @include build-grid-center();
+        }
+    }
+
+    @if ($level == "large") {
+        @include respond-to("large and above"){
+            @include build-grid-center();
+        }
+    }
+
+    @if ($level == "largest") {
+        @include respond-to("largest only"){
+            @include build-grid-center();
+        }
+    }
+}
+
+@each $level in $grid__levels {
+    .grid__column.grid__column--center--#{$level} {
+        @include responsive-grid-center($level);
+    }
+}
 
 /* 
     GRID OVERLAY BG COLOR   
