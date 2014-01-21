@@ -8,8 +8,10 @@
 body {
     position: relative;
     color: #333;
-    padding-top: 20px;
     font-size: 100%;
+    background-color: #fdfdfd;
+    border-top: 5px solid #333;
+    font-family: "Helvetica";
 }
 
 
@@ -41,4 +43,31 @@ body {
 
 .island--light {
     background-color: rgba(0,0,0,.06);
+}
+
+.island--primary {
+    border-bottom: 1px solid #ddd;
+    background-color: #333;
+    padding-top: 120px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    color: #666;
+    z-index: -2;
+    position: relative;
+
+    h3 {
+        color: #555;
+    }
+}
+
+.island--secondary {
+    box-sizing: border-box;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    float: left;
+    width: 100%;
+
+    h4 {
+        margin-bottom: 3px;
+    }
 }

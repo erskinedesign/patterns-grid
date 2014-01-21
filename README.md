@@ -2,26 +2,28 @@
 A customisable, fully responsive grid system with multiple breakpoints.
 
 
+
+
 ## Features
-- Fluid grid.
-- Nesting (only one layer deep though).
-- Add viewport-specific classes to the cells.
-- Supports multiple grid types (grid--a, grid--b, etc).
+- Fluid grid with fixed gutters.
+- Multiple breakpoints for fine control over responsive components.
+- Breakpoint specific grid columns.
+- Push grid columns left or right and center smaller columns.
 - No .clear, .start, .end or .last classes.
-- Push classes left or right for more customisation.
-- Grid toggler for viewing 
+- Complimentary grid overlay script.
 
-## Problems
-- Creates an enormous amount of CSS (we suggest you use a Grunt tool to remove unused classes).
 
-#### Grid toggler
-The grid toggler hides the `.grid--overlay` wrapper and automatically generates the number of columns that is being used in the `.grid--overlay` modifier. This means that if we update the number of columns in the overlay we won’t have change the script at all. 
+## Compromises
+- Generates an enormous amount of CSS – we recommend using a Grunt tool such as [Uncss](https://github.com/addyosmani/grunt-uncss) to strip out any unused styles.
+- Grid units should only be set with these classes in the markup (rather than extended from another module entirely). Currently there’s no ability to change the width of a specific component with these settings.
+- Due to the amount of CSS this module generates, you can only nest grid columns twice.
 
-The grid toggler is written in plain Javascript so that we can move this into an asynchronous module later on if we wish.
-
+## Browser Support
+- Chrome 32.0, Firefox 26.0, Safari 7.0
 
 
 ### Dependencies
+- Sass
 - Compass
 - Breakpoint
 
@@ -29,3 +31,4 @@ The grid toggler is written in plain Javascript so that we can move this into an
 ### Acknowledgements
 - [Griddle](https://github.com/necolas/griddle) by Nicholas Gallagher
 - [csswizardry-grid](https://github.com/csswizardry/csswizardry-grids) by Harry Roberts
+- [Better, simpler grid systems](http://philipwalton.github.io/solved-by-flexbox/demos/grids/) by Phil Walton

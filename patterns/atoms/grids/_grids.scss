@@ -101,10 +101,12 @@
      */
         .grid__column {
             -moz-box-sizing: border-box; /* [1] */
+            -webkit-box-sizing: border-box;
             box-sizing: border-box; /* [1] */
             vertical-align: top; /* [2] */
             @include rems(padding-right, $gutter); /* [3] */
             float: left;
+            @include pie-clearfix();
 
             @include respond-to("large and above"){
                 @include rems(padding-right, $gutter--large); /* [4] */

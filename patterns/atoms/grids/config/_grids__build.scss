@@ -342,7 +342,6 @@
     }
 }
 
-/* Push both classes */
 @each $level in $grid__levels {
     @for $i from 1 through $columns {
         .push--both-#{$i}--#{$level}{
@@ -409,6 +408,10 @@ $directions: left, right;
 /* 
     GENERATE CENTER COLUMNS   
     ========================================================================== */
+/**
+ * This mixin generates all of the .grid__column--center classes that we need in
+ * order to center columns.
+ */
 @mixin build-center($num) {
     margin-left: ((100 - (($num / $columns) * 100)) / 2 ) * 1%;
 }
@@ -498,23 +501,6 @@ $directions: left, right;
         }
     }
 }
-
-
-
-
-
-/**
- * String function that surronds "" around a variable, this is useful 
- * for adding variables to a pseudo element’s content. Used for adding
- * the number of columns to the body.
- */
-@function string($number) {
-    $number: $number + "";
-
-    @return $number;
-}
-
-
 
 
 

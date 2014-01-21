@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Grid system</title>
+        <title>EDX Grid system</title>
         <link rel="stylesheet" href="../../../reset.css">
         <link rel="stylesheet" href="../../../screen.css">
         <script src="scripts/grid-toggle.js"></script>
@@ -12,18 +12,72 @@
 
     <body>
         
-        <div class="grid">
-            <div class="grid__container">
-                <div class="grid__column">
-                    <h1>EDX Grid pattern</h1>
-                    <h2>A customisable, fully responsive grid system with multiple breakpoints.</h2>
-                    <hr/>
+
+
+        <div class="island island--primary">
+            <div class="grid">
+                <div class="grid__container">
+                    <div class="grid__column">
+                        <h1>EDX Grid pattern</h1>
+                        <h2>A customisable, fully responsive grid system with multiple breakpoints.</h2>
+                    </div>
                 </div>
+            </div><!-- //.grid -->
+        </div><!-- //.island -->
+
+
+        <div class="grid">
+
+            <div class="grid__container">
+                <div class="grid__column
+                            grid__column--12">
+                    <div class="island--secondary">
+
+                        <div class="grid__container">
+
+                            <div class="grid__subgrid">
+                                <div class="grid__column
+                                                grid__column--6--large">
+
+                                    <div class="island__container">
+                                        <h4>Features</h4>
+
+                                        <ul>
+                                            <li>Fluid grid with fixed gutters.</li>
+                                            <li>Multiple breakpoints for fine control over responsive components.</li>
+                                            <li>Breakpoint specific grid columns</li>
+                                            <li>Push columns left or right and center smaller columns.</li>
+                                            <li>No <code>.clear</code> <code>.start</code> or <code>.end</code> classes necessary.</li>
+                                            <li>Complimentary grid overlay script.</li>
+                                        </ul>
+                                    </div>
+                                </div><!-- //.grid__column -->
+                            </div><!-- //.grid__subgrid -->
+
+                            <div class="grid__subgrid">
+                                <div class="grid__column
+                                                grid__column--6--large">
+                                    <div class="island__container">
+                                        <h4>Compromises</h4>
+                                        <ul>
+                                            <li>Generates an enormous amount of CSS - we recommend using a Grunt tool such as <a href="https://github.com/addyosmani/grunt-uncss/">Uncss</a> to strip out any unused styles.</li>
+                                            <li>Grid units should only be set with these classes in the markup, there’s no ability to change the width on a specific component.</li>
+                                            <li>Due to the amount of CSS this module currently generates, you can only nest a grid twice.</li>
+                                        </ul>
+                                    </div><!-- //.island__container -->
+                                </div><!-- //.grid__column -->
+                            </div><!-- //grid__subgrid -->
+                        </div>
+                    </div>
+                </div><!-- //.grid__column -->
+
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
 
-        <div class="grid">
 
+
+
+        <div class="grid">
             <div class="grid__container">
                 <div class="grid__column
                             grid__column--7--largest">
@@ -43,10 +97,10 @@
             <div class="grid__container">
                 <div class="grid__column
                             grid__column--7--largest">
-                    <h3>Grid toggler</h3>
-                    <p>With this module comes a complimentary script for displaying the <code>.grid--overlay</code> and automatically generating the number of grid columns. The script will automatically generate the number of columns from the grid-settings, as we’re setting the content of the pseudo element with that variable and iterating over it. This means that we don’t need to change the script when we change the settings. </p>
+                    <h3>Grid overlay</h3>
+                    <p>With this module comes a complimentary script for displaying the <code>.grid--overlay</code> and automatically generating the number of grid columns. This means that we don’t need to change the script when we change the settings. It’s written in plain ol’ JS so jQuery isn’t a dependency.</p>
 
-                    <p>Press ‘G’ to see which grid is currently being used.</p>
+                    <p>Press ‘G’ to activate the grid overlay.</p>
                 </div>
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
@@ -74,6 +128,67 @@
                 <div class="cell">.grid__container</div>
             </div><!-- //,grid__container -->
         </div><!-- //.grid -->
+
+        <div class="grid">
+            <div class="grid__container">
+                <div class="grid__column
+                            grid__column--7--largest">
+                    <h3>Fixed gutters</h3>
+                    <p>Gutters are fixed width, but can change depending on the breakpoint. In this example the gutter is increased to 25px at Breakpoint D and above.</p>
+                </div>
+            </div>
+
+            <div class="grid__container">
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+                <div class="grid__column 
+                            grid__column--1">
+                    <div class="cell"></div>
+                </div>
+            </div>
+        </div>
 
         <div class="grid">
             <div class="grid__container">
@@ -234,14 +349,16 @@
 .grid__column--center--8--large
 .grid__column--8--large
 
-.grid__column--4--largest
-.grid__column--center--4--largest</pre></div>
+.grid__column--10--largest
+.grid__column--center--10--largest</pre></div>
                 </div>
 
                 <div class="grid__column
                             grid__column--10
                             grid__column--center--10">
-                    <div class="cell">.grid__column--center--8</div>
+                    <div class="cell"><pre>
+.grid__column--10
+.grid__column--center--10</pre></div>
                 </div>
                 <div class="grid__column
                             grid__column--6
@@ -267,74 +384,11 @@
 
         <div class="grid">
             <div class="grid__container">
-                <div class="grid__column
-                            grid__column--7--largest">
-                    <h3>Fixed gutters</h3>
-                    <p>Gutters are fixed width, but can change depending on the breakpoint. In this example the gutter is increased to 25px at Breakpoint D and above.</p>
-                </div>
-            </div>
-
-            <div class="grid__container">
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-                <div class="grid__column 
-                            grid__column--1">
-                    <div class="cell"></div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="grid">
-            <div class="grid__container">
 
                 <div class="grid__column
                             grid__column--7--largest">
                     <h3>Responsive columns</h3>
-                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid, for instance if a design component needed to be small width at mobile, wide at tablet and then large again at desktop. First the developer would specify the class <code>.grid__column--8--medium</code> followed by <code>.grid__column--6--large</code>. This system allows for an enormous number of design decisions to be made between these breakpoints.</p>
+                    <p>Depending on the number of breakpoints in the grid system, you can have any number of combinations of the grid, for instance if a design component needed to be small width at mobile, wide at tablet and then small again at desktop. First you’d need to specify the class <code>.grid__column--8--medium</code> followed by <code>.grid__column--6--large</code>. This system allows for an enormous number of design decisions to be made between these breakpoints.</p>
 
                 </div><!-- //.grid__column -->
                 
@@ -518,11 +572,11 @@
         </div><!-- //.grid -->
 
         <div class="grid">
-            <div class="grid__container grid__container--subgrid">
+            <div class="grid__container">
                 <div class="grid__column
                             grid__column--7--largest">
                     <h3>Nesting grids</h3>
-                    <p>In order to have nested grids we need to use a nasty hack. First we encapsulate a nested <code>.grid__column</code> with the <code>.subgrid</code> class. Then we use the whacky box model to cheat the child column into thinking that its parent (the subgrid) is actually the width of the full grid__container.</p>
+                    <p>In order to have nested grids we need to use a nasty hack. First we encapsulate a nested <code>.grid__column</code> with the <code>.grid__subgrid</code> class. Then we use the whacky box model to cheat the child column into thinking that its parent (the subgrid) is actually the width of the full grid__container.</p>
 
                     <p>This way we’ll always know that a <code>grid__column--2</code> will always be 2 columns, regardless of whether it’s nested or not. Due to the crazy amount of CSS this creates you can only nest the grid once.</p>
                 </div>
@@ -759,7 +813,7 @@
                 <div class="grid__column
                             grid__column--7--largest">
                     <h3>Full width cells</h3>
-                    <p>If a module is not inside the grid then it will naturally be 100% of the viewport. If possible, all modules should automatically fill up the parent element by default. This way we’ll know precisely how to modify the width of the element – by changing the grid classes on its parent container.</p>
+                    <p>If a module is not inside the grid then it will naturally be 100% of the viewport. If possible, all modules should automatically fill up the parent element by default. This way we’ll know precisely how to modify the width of the element – by changing the grid classes in the markup.</p>
                 </div>
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
