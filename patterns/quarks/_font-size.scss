@@ -60,7 +60,7 @@ p {
 ul {
     margin-bottom: 16px;
 
-    @include respond-to("large and above"){
+    @include respond-to("largest only"){
         margin-bottom: 0;
     }
 

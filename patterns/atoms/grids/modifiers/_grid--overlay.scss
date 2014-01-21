@@ -3,34 +3,27 @@
    ========================================================================== */
 /**
  * A tool for automatically creating an overlay based on our default breakpoints 
+ *
+ * 
+ * CONTENTS
+ * 
+ * 1. Dependencies
+ * 2. 
  */
 
 
 /* 
-   $MARKUP
-   ========================================================================== */
-/**
- * <div class="grid--overlay">
- *  @grid module
- * </div>
- */
-
-
-/* 
-   $MODULE DEPENDENCIES
-   ========================================================================== */
-/**
- * 1. Probably the toggler script.
- * 2. grid__column generator script.
+   1.DEPENDENCIES
+   ==========================================================================
+ * a. grid-toggle.js for adding the markup to the document.
  */
 
 /* 
-   $OVERLAY
+   $OVERLAY STYLES
    ========================================================================== */
 /**
- * 1. Requires relative position on the body element.
+ * a. Requires relative position on the body element.
  */
-
 
 
 /**
