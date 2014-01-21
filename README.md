@@ -21,13 +21,13 @@ A customisable, fully responsive grid system with multiple breakpoints.
 - Chrome 32.0, Firefox 26.0, Safari 7.0
 
 
-### Dependencies
+## Dependencies
 - Sass
 - Compass
 - Breakpoint
 
 
-### Acknowledgements
+## Acknowledgements
 - [Griddle](https://github.com/necolas/griddle) by Nicholas Gallagher
 - [csswizardry-grid](https://github.com/csswizardry/csswizardry-grids) by Harry Roberts
 - [Better, simpler grid systems](http://philipwalton.github.io/solved-by-flexbox/demos/grids/) by Phil Walton
