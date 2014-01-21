@@ -2,8 +2,6 @@
 A customisable, fully responsive grid system with multiple breakpoints.
 
 
-
-
 ## Features
 - Fluid grid with fixed gutters.
 - Multiple breakpoints for fine control over responsive components.

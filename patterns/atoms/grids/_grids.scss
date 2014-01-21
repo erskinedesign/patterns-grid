@@ -106,7 +106,7 @@
             vertical-align: top; /* [2] */
             @include rems(padding-right, $gutter); /* [3] */
             float: left;
-            @include pie-clearfix();
+
 
             @include respond-to("large and above"){
                 @include rems(padding-right, $gutter--large); /* [4] */
@@ -123,27 +123,11 @@
             float: right;
         }
 
-        /**
-         * Centering grid columns 
-         *
-         * 1. Aligns centered columns to the grid. 
-         */
-        .grid__column--center {
-            // float: none;
-            // margin: 0 auto;
-            // @include rems(padding-left, $gutter); /* [1] */
-            // padding-right: 0; /* [1] */
-
-            // @include respond-to("large and above"){
-            //     @include rems(padding-left, $gutter--large); /* [1] */
-            // }
-        }
-
 
 
 
 /**
- * Cell unit for testing
+ * Cell unit for testing: should be removed after debug
  */
 .cell {
     -moz-box-sizing: border-box; 
