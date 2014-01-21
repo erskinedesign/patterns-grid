@@ -353,21 +353,6 @@
 
 
 
-/* 
-    GENERATE PUSH RESET CLASSES   
-    ========================================================================== */
-/**
- * At other breakpoints we’ll need to reset these values back to margin: 0; so
- * we need a reset too.
- */
-
-@mixin build-grid-reset($direction){
-    margin-#{$direction}: 0;
-}
-
-
-
-
 
 
 /* 
@@ -377,6 +362,7 @@ $directions: left, right;
 
 @mixin build-grid-float($direction){
     float: $direction;
+    margin-left: 0;
 }
 
 
@@ -466,7 +452,7 @@ $directions: left, right;
 /* Push both classes */
 @each $level in $grid__levels {
     @for $i from 1 through $columns {
-        .grid__column--center--#{$i}--#{$level}{
+        .grid__column.grid__column--center--#{$i}--#{$level}{
             @include responsive-build-center($i, $level);
         }
     }

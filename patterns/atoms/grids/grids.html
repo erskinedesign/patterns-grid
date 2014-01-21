@@ -204,41 +204,64 @@
                     <h3>Centering columns</h3>
                     <p>Columns can be centered with the <code>.grid__column--center</code> class. It’s also possible to center columns to the left at medium breakpoints, then right or left align them at larger breakpoints.</p>
                 </div>
+            </div><!-- //.grid__container -->
 
+            <div class="grid__container">
                 <div class="grid__column
                             grid__column--8
-                            grid__column--center--8">
-                    <div class="cell">grid__column--center</div>
+                            grid__column--center--8
+
+                            grid__column--right--small
+                            grid__column--9--small
+
+                            grid__column--11--medium
+                            grid__column--left--medium
+
+                            grid__column--center--8--large
+                            grid__column--8--large
+
+                            grid__column--10--largest
+                            grid__column--center--10--largest">
+                    <div class="cell"><pre>.grid__column--8
+.grid__column--center--8
+
+.grid__column--right--small
+.grid__column--9--small
+
+.grid__column--left--medium
+.grid__column--11--medium
+
+.grid__column--center--8--large
+.grid__column--8--large
+
+.grid__column--4--largest
+.grid__column--center--4--largest</pre></div>
                 </div>
 
                 <div class="grid__column
-                            grid__column--9
-                            grid__column--center">
-                    <div class="cell">.grid__column--center</div>
+                            grid__column--10
+                            grid__column--center--10">
+                    <div class="cell">.grid__column--center--8</div>
                 </div>
                 <div class="grid__column
-                            grid__column--7
-                            grid__column--center
-                            grid__column--left--small
-                            grid__column--center--large">
-                    <div class="cell"><pre>.grid__column--center
-.grid__column--center
-.grid__column--left--small
-.grid__column--center--large</pre></div>
+                            grid__column--6
+                            grid__column--center--6">
+                    <div class="cell"></div>
                 </div>
             </div>
             <div class="grid__container">
                 <div class="grid__column
-                            grid__column--5
-                            grid__column--center
-                            grid__column--right--medium
-                            grid__column--center--large">
-                    <div class="cell"><pre>.grid__column--center
-.grid__column--center
-.grid__column--right--medium
-.grid__column--center--large</pre></div>
+                            grid__column--4
+                            grid__column--center--4">
+                    <div class="cell"></div>
                 </div>
-
+            </div><!-- //.grid__container -->
+            <div class="grid__container">
+                <div class="grid__column
+                            grid__column--2
+                            grid__column--center--2">
+                    <div class="cell"></div>
+                </div>
             </div><!-- //.grid__container -->
         </div><!-- //.grid -->
 
