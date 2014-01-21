@@ -1,8 +1,6 @@
 # EDX Grid Pattern
 A customisable, fully responsive grid system with multiple breakpoints.
 
-This is the grid system that we’ve been using internally at Erskine, based on a lot of the problems that we’ve been encountering over and over again.
-
 
 ## Features
 - Fluid grid with fixed gutters.
