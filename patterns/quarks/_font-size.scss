@@ -17,6 +17,7 @@ h1 {
     color: #ddd;
     text-align: center;
     margin-bottom: 20px;
+    font-family: "ff-meta-web-pro-condensed", sans-serif;
 
     @include respond-to("large and above"){
         font-size: 60px;
@@ -32,6 +33,7 @@ h2 {
     padding-bottom: 70px;
     color: #aaa;
     text-align: center;
+    font-family: "ff-meta-web-pro-condensed", sans-serif;
 }
 
 h3 {
@@ -40,6 +42,7 @@ h3 {
     margin-top: 30px;
     margin-bottom: 3px;
     color:#222;
+    font-family: "ff-meta-web-pro-condensed", sans-serif;
 
     @include respond-to("large and above"){
         margin-top: 40px;
@@ -49,6 +52,7 @@ h3 {
 h4 {
     font-size: 18px;
     font-weight: bold;
+    font-family: "ff-meta-web-pro-condensed", sans-serif;
 }
 
 p {
