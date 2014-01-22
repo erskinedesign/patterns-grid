@@ -2,6 +2,17 @@
 A customisable, fully responsive grid system with multiple breakpoints.
 
 
+
+## Additions to be made
+- Use the latest release of Breakpoint.
+- Set breakpoints with Sass maps. This way we won’t need to loop over the respond-to mixin over and over again.
+- Set colors to specific breakpoints (ie. medium == red, large == blue, etc.)
+- Shorten the length of grid column class names to g--12--medium.
+- Place underscores in front of variables / mixins that are not global.
+- Need to turn off certain parts of the grid system by default. We need some kind of directory structure for a module’s settings, config and imports. 
+- Do we need to add the box-sizing polyfill for IE6/IE7?
+
+
 ## Features
 - Fluid grid with fixed gutters.
 - Multiple breakpoints for fine control over responsive components.
