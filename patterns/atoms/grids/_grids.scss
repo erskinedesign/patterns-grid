@@ -61,7 +61,7 @@
     @include pie-clearfix(); /* [1] */
     display: block;
     @include rems(max-width, 850); /* [2] */
-    width: 95%; /* [3] */
+    width: 90%; /* [3] */
     margin: 0 auto; /* [3] */
 
     /**
