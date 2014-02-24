@@ -1,16 +1,8 @@
-# EDX Grid Pattern
-A customisable, fully responsive grid system with multiple breakpoints.
+EDX Grid Pattern
+------------
 
+A customisable, fully responsive grid system with multiple breakpoints that we use for multiple Erskine projects.
 
-
-## Additions to be made
-- Use the latest release of Breakpoint.
-- Set breakpoints with Sass maps. This way we won’t need to loop over the respond-to mixin over and over again.
-- Set colors to specific breakpoints (ie. medium == red, large == blue, etc.)
-- Shorten the length of grid column class names to g--12--medium.
-- Place underscores in front of variables / mixins that are not global.
-- Need to turn off certain parts of the grid system by default. We need some kind of directory structure for a module’s settings, config and imports. 
-- Do we need to add the box-sizing polyfill for IE6/IE7?
 
 
 ## Features
@@ -19,23 +11,21 @@ A customisable, fully responsive grid system with multiple breakpoints.
 - Breakpoint specific grid columns.
 - Push grid columns left or right and center smaller columns.
 - No .clear, .start, .end or .last classes.
-- Complimentary grid overlay script.
-
-
-## Compromises
-- Generates an enormous amount of CSS – we recommend using a Grunt tool such as [Uncss](https://github.com/addyosmani/grunt-uncss) to strip out any unused styles.
-- Grid units should only be set with these classes in the markup (rather than extended from another module entirely). Currently there’s no ability to change the width of a specific component with these settings.
-- Due to the amount of CSS this module generates, you can only nest grid columns twice.
-
-
-## Browser Support
-- Chrome 32.0, Firefox 26.0, Safari 7.0
 
 
 ## Dependencies
 - Sass
 - Compass
 - Breakpoint
+
+
+## Additions to be made
+[X] Use the latest release of Breakpoint.
+[X] Set breakpoints with Sass maps. This way we won’t need to loop over the respond-to mixin over and over again.
+[X] Set colors to specific breakpoints (ie. medium == red, large == blue, etc.)
+[X] Shorten the length of grid column class names to g--12--medium.
+[X] Place underscores in front of variables / mixins that are not global.
+[X] Need to turn off certain parts of the grid system by default. We need some kind of directory structure for a module’s settings, config and imports. 
 
 
 ## Acknowledgements
