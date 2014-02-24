@@ -44,10 +44,10 @@
                 <div class="g__col
                             g__col--7--largest">
                     <h3>Grid</h3>
-                    <p>The <code>.grid</code> simply adds negative horizontal margins so that we don’t need any .last or .first <code>.g__col</code> classes. Use an alternative wrapper class to set max-width.</p>
+                    <p>The <code>.g</code> component simply adds negative horizontal margins so that we don’t need any .last or .first <code>.g__col</code> classes. Use an alternative wrapper class to set max-width.</p>
                 </div>
 
-                <div class="cell">.grid</div>
+                <div class="cell">.g</div>
             </div><!-- //.g -->
 
 
@@ -115,9 +115,9 @@
                 <div class="g__col
                             g__col--7--largest">
                     <h3>Grid columns</h3>
-                    <p>By default a <code>.g__col</code> is 100% of the width of the <code>.grid__container</code>. These columns have many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container itself.</p>
+                    <p>By default a <code>.g__col</code> is 100% of the width of <code>.g</code>. These columns have many modifiers available for sizing the various units within, whilst the width of each is dependent on the number of columns set and the width of the container itself.</p>
 
-                    <p>Columns can be aligned to the right with the <code>.g__align--right</code> class. Due to the way that floats are handled by CSS, sometimes we’ll need to add extra <code>.grid</code> objects in order to clear columns properly.</p>
+                    <p>Columns can be aligned to the right with the <code>.g__align--right</code> class. Due to the way that floats are handled by CSS, sometimes we’ll need to add extra <code>.g</code> objects in order to clear columns properly.</p>
                 </div>
             </div><!-- //.g -->
 
@@ -233,8 +233,8 @@
 
             <div class="g">
                 <div class="g__col
-g__col--8
-g__col--center">
+                            g__col--8
+                            g__col--center">
                     <div class="cell"><pre>
 .g__col
 .g__col--8
@@ -370,7 +370,7 @@ g__col--center">
                 <div class="g__col
                             g__col--7--largest">
                     <h3>Pushing a column left or right</h3>
-                    <p>Columns can be pushed either left or right of the grid container. Since all columns float left by default, the <code>g__col--right</code> class must be added in order to float columns to the right.</p>
+                    <p>Columns can be pushed either left or right of the grid container. Since all columns float left by default, the <code>.g__align--right</code> class must be added in order to float columns to the right.</p>
                 </div><!-- //.g__col -->
 
             </div><!-- //.g -->
@@ -380,7 +380,7 @@ g__col--center">
                             g__col--10
                             g__push--left-1">
                         <div class="cell">
-                            <pre>.push--left-1</pre>
+                            <pre>.g__push--left-1</pre>
                         </div>
                 </div><!-- //.g__col -->
 
@@ -389,8 +389,8 @@ g__col--center">
                                 g__align--right
                                 g__push--right-1">
                             <div class="cell">
-                                <pre>.g__col--right
-    .push--right-1</pre>
+                                <pre>.g__align--right
+.g__push--right-1</pre>
                             </div>
                 </div><!-- //.g__col -->
 
@@ -420,7 +420,7 @@ g__col--center">
                             g__col--5--large
                             g__push--right-1--large
                             g__align--right--large">
-                        <div class="cell"><pre>.g__col--10
+                        <div class="cell"><pre>
 .g__col
 .g__col--10
 .g__push--left-2
@@ -445,15 +445,15 @@ g__col--center">
                 <div class="g__col
                             g__col--7--largest">
                     <h3>Pushing in both directions</h3>
-                    <p>Pushing in both directions is possible with the <code>.push--both</code> modifier class. This will always override any of the set widths in the <code>.g__col</code> classes because in order for this to work the module must be more than 100% wide.</p>
+                    <p>Pushing in both directions is possible with the <code>.g__push--both</code> modifier class. This will always override any of the set widths in the <code>.g__col</code> classes because in order for this to work the module must be more than 100% wide.</p>
                 </div>
                 <div class="g__col
                             g__push--both-1">
-                    <div class="cell">.push--both-1</div>
+                    <div class="cell">.g__push--both-1</div>
                 </div>
                 <div class="g__col
                             g__push--both-2">
-                    <div class="cell">.push--both-2</div>
+                    <div class="cell">.g__push--both-2</div>
                 </div>
             </div><!-- //.grid -->
 
