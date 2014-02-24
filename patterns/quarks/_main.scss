@@ -5,6 +5,11 @@
  * Default styles for the body and html class.
  */
 
+
+* {
+    box-sizing: border-box;
+}
+
 body {
 
     color: #333;
@@ -12,6 +17,8 @@ body {
     background-color: #fdfdfd;
     border-top: 5px solid #111;
     font-family: "Helvetica";
+    height: 100%;
+    position: relative;
 }
 
 
@@ -37,37 +44,30 @@ body {
 }
 
 .island--dark {
-    background-color: rgba(255,255,255,.5);
+    background-color: rgba(255,255,255,.3);
     border: 1px solid rgba(0,0,0,.3);
 }
 
 .island--light {
-    background-color: rgba(0,0,0,.06);
+    background-color: rgba(0,0,0,.09);
 }
 
-.island--primary {
-    border-bottom: 1px solid #ddd;
-    background-color: #333;
-    padding-top: 140px;
-    padding-bottom: 70px;
-    margin-bottom: 30px;
-    color: #666;
-    z-index: -2;
-    position: relative;
-
-    h3 {
-        color: #555;
-    }
-}
 
 .island--secondary {
     box-sizing: border-box;
-    background-color: #eee;
-    border: 1px solid #ddd;
+    border: 1px dotted #ccc;
     float: left;
     width: 100%;
 
     h4 {
         margin-bottom: 3px;
     }
+}
+
+
+.wrapper {
+    padding-left: rem-calc(20);
+    padding-right: rem-calc(20);
+    max-width: rem-calc(900);
+    margin: 0 auto;
 }

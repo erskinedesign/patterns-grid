@@ -1,0 +1,18 @@
+// ==========================================================================
+// GRID SCAFFOLDING
+// ==========================================================================
+//
+// Import scaffolding code for styling this module.
+//
+// This is code that does not generate output eg. mixins and functions
+//
+
+
+// IMPORT GLOBAL CONFIG
+// Imports global variables and mixins/functions
+@import 'grids-settings';
+
+
+// Import grids module class builder
+@import 'utils/grids-build';
+

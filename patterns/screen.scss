@@ -21,7 +21,7 @@
 
 
 
-$legacy-support-for-ie: false; // for some reason this seems to need to be here rather than in _config.scss
+// $legacy-support-for-ie: false; // for some reason this seems to need to be here rather than in _config.scss
 
 /* 
    1.THIRD PARTY DEPENDENCIES
@@ -32,18 +32,9 @@ $legacy-support-for-ie: false; // for some reason this seems to need to be here 
 
 
 
-/* 
-   2.GLOBAL-CONFIG
-   ========================================================================== */
-@import "global-config";
+@import "config/config";
 
-
-
-
-/* 
-   3.UTILITIES
-   ========================================================================== */
-@import "utilities/mixins";
+@import "tools/tools";
 
 
 

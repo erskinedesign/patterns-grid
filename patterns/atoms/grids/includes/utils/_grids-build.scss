@@ -1,0 +1,149 @@
+// ==========================================================================
+// GRID-BUILD
+// ==========================================================================
+//
+// Builds the various classes that we need for the grid module.
+//
+//
+// CONTENTS
+// 1. Layout mixins
+// 2. Grid class generator
+
+
+// 1. LAYOUT MIXINS
+// ==========================================================================
+// These mixins simply set positional properties such as width, margins and
+// float direction. They’re included in the GRID CLASS GENERATOR beneath.
+//
+
+
+// Sets the column width depending on the number of columns
+// defined in _grid-settings.scss
+
+@mixin _grid-column($num, $context: $columns) {
+    width: percentage(($num / $context));
+}
+
+
+// These mixins generate styles for push a grid columns left, right or in both
+// directions if necessary.
+
+@mixin _grid-push-left($num, $context: $columns){
+    margin-left:- percentage(($num/$context));
+}
+
+@mixin _grid-push-right($num, $context: $columns) {
+    margin-right:- (percentage(($num/$context)));
+}
+
+@mixin _grid-push-both($num, $context: $columns) {
+    width: (100%) + (percentage(($num/$context)) * 2);
+    margin-left:- percentage(($num/$context));
+}
+
+
+// Grid columns can be floated left or right depending on the breakpoint
+
+@mixin _grid-align-float($direction){
+    float: $direction;
+}
+
+
+// This mixin removes the modifier class at the end of the class generator
+// for styles that don’t need breakpoints.
+
+@mixin _grid-respond-to($breakpoint:false){
+    @if $breakpoint {
+        @include respond-to($breakpoint) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+
+
+// 2.GRID CLASS GENERATOR
+// ==========================================================================
+// This module generates the grid modifier classes and includes the mixins above
+// for each breakpoint.
+//
+// For instance
+//
+// .g__col--7--medium {
+//  @include _grid-column(7, medium);
+// }
+//
+// It takes options form the _grids-settings.scss in order to limit the number
+// of classes it generates. You might only need columns 3, 8 and 9 to be
+// created in one example.
+//
+
+
+@each $group, $config in $grids {
+
+    $breakpoint:        map-get($config, breakpoint);
+    $build-cols:        map-get($config, cols);
+    $push-left-cols:    map-get($config, push-left);
+    $push-right-cols:   map-get($config, push-right);
+    $push-both-cols:    map-get($config, push-both);
+    $directions:        map-get($config, directions );
+    $col-count:         map-get($config, col-count);
+
+    $group-name:        if($group == 'base', '', '--#{$group}');
+    $col-count:         if($col-count, $col-count, $columns);
+
+    @each $num in $build-cols {
+        .g__col--#{$num}#{$group-name} {
+            @include _grid-respond-to($breakpoint) {
+                @include _grid-column($num, $col-count);
+            }
+        }
+    }
+
+    //push left
+    @if $push-left-cols {
+        @each $num in $push-left-cols {
+            .g__push--left-#{$num}#{$group-name} {
+                @include _grid-respond-to($breakpoint) {
+                    @include _grid-push-left($num);
+                }
+            }
+        }
+    }
+
+    //push right
+    @if $push-right-cols {
+        @each $num in $push-right-cols {
+            .g__push--right-#{$num}#{$group-name} {
+                @include _grid-respond-to($breakpoint) {
+                    @include _grid-push-right($num);
+                }
+            }
+        }
+    }
+
+    //push both
+    @if $push-both-cols {
+        @each $num in $push-both-cols {
+            .g__push--both-#{$num}#{$group-name} {
+                @include _grid-respond-to($breakpoint) {
+                    @include _grid-push-both($num);
+                }
+            }
+        }
+    }
+
+    //align left/right floatage
+    @if $directions {
+        @each $direction in $directions {
+            .g__col.g__align--#{$direction}#{$group-name} {
+                @include _grid-respond-to($breakpoint) {
+                    @include _grid-align-float($direction);
+                }
+            }
+        }
+    }
+}
