@@ -5,6 +5,7 @@ A customisable, fully responsive grid system with multiple breakpoints that we u
 
 For implementing this module into a project take a look at the [docs](http://erskinedesign.github.io/patterns-grid/).
 
+![The docs](http://cl.ly/image/161c3T1G0U26/Screen%20Shot%202014-02-28%20at%2014.08.23.png)
 
 
 ## Features
