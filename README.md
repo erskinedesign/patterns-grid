@@ -23,13 +23,13 @@ For implementing this module into a project take a look at the [docs](http://ers
 
 
 ## Additions to be made
-[] Add support for older browsers that don’t parse REM units with Compass.
-[X] Use the latest release of Breakpoint.
-[X] Set breakpoints with Sass maps. This way we won’t need to loop over the respond-to mixin over and over again.
-[X] Set colors to specific breakpoints (ie. medium == red, large == blue, etc.)
-[X] Shorten the length of grid column class names to g--12--medium.
-[X] Place underscores in front of variables / mixins that are not global.
-[X] Need to turn off certain parts of the grid system by default. We need some kind of directory structure for a module’s settings, config and imports. 
+- [] Add support for older browsers that don’t parse REM units with Compass.
+- [X] Use the latest release of Breakpoint.
+- [X] Set breakpoints with Sass maps. This way we won’t need to loop over the respond-to mixin over and over again.
+- [X] Set colors to specific breakpoints (ie. medium == red, large == blue, etc.)
+- [X] Shorten the length of grid column class names to g--12--medium.
+- [X] Place underscores in front of variables / mixins that are not global.
+- [X] Need to turn off certain parts of the grid system by default. We need some kind of directory structure for a module’s settings, config and imports. 
 
 
 ## Acknowledgements
