@@ -1,7 +1,9 @@
 // ==========================================================================
 // BREAKPOINT SETTINGS
 // ==========================================================================
-//
+// 
+// For more information about Breakpoint visit the docs: 
+// http://breakpoint-sass.com/
 //
 // This module defines the global breakpoints and width variables for
 // generating media queries in CSS.
@@ -10,10 +12,14 @@
 // to the $breakpoints list. With the breakpoint respond-to feature we can then
 // use media queries like this:
 //
-//
-// @include respond-to("small and above"){
-//      @content
+// .module {
+// 		@include respond-to("small and above"){
+//      	color: red
+// 		}
 // }
+//
+// More info about the respond-to mixin can be found here: 
+// https://github.com/Team-Sass/breakpoint/wiki/Respond-To
 //
 
 $width__small: 425px;
@@ -24,8 +30,9 @@ $width__largest: 900px;
 
 
 
-// BREAKPOINTS
+// # BREAKPOINTS
 // ==========================================================================
+// 
 
 $breakpoint-to-ems: true;
 
