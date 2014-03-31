@@ -46,6 +46,12 @@
 
 @mixin _grid-align-float($direction){
     float: $direction;
+    margin-left: 0;
+}
+
+// Nested grid - full width columns
+@mixin _grid-all-columns(){
+    width: 100%;
 }
 
 
@@ -62,6 +68,7 @@
         @content;
     }
 }
+
 
 
 
@@ -91,59 +98,101 @@
     $push-both-cols:    map-get($config, push-both);
     $directions:        map-get($config, directions );
     $col-count:         map-get($config, col-count);
+    $nested:            map-get($config, nested);
 
     $group-name:        if($group == 'base', '', '--#{$group}');
     $col-count:         if($col-count, $col-count, $columns);
 
-    @each $num in $build-cols {
-        .g__col--#{$num}#{$group-name} {
-            @include _grid-respond-to($breakpoint) {
+
+    // build columns
+    // also adds classes for nested grid
+    //
+    // example
+    //
+    // .g__col--6,
+    // .g__col--6-of-12
+    @include _grid-respond-to($breakpoint) {
+        @each $num in $build-cols {
+            .g__col--#{$num}#{$group-name},
+            .g__col--#{$num}-of-#{$col-count}#{$group-name} {
                 @include _grid-column($num, $col-count);
             }
         }
-    }
 
-    //push left
-    @if $push-left-cols {
-        @each $num in $push-left-cols {
-            .g__push--left-#{$num}#{$group-name} {
-                @include _grid-respond-to($breakpoint) {
+        //push left
+        @if $push-left-cols {
+            @each $num in $push-left-cols {
+                .g__push--left-#{$num}#{$group-name} {
                     @include _grid-push-left($num);
                 }
             }
         }
-    }
 
-    //push right
-    @if $push-right-cols {
-        @each $num in $push-right-cols {
-            .g__push--right-#{$num}#{$group-name} {
-                @include _grid-respond-to($breakpoint) {
+        //push right
+        @if $push-right-cols {
+            @each $num in $push-right-cols {
+                .g__push--right-#{$num}#{$group-name} {
                     @include _grid-push-right($num);
                 }
             }
         }
-    }
 
-    //push both
-    @if $push-both-cols {
-        @each $num in $push-both-cols {
-            .g__push--both-#{$num}#{$group-name} {
-                @include _grid-respond-to($breakpoint) {
+        //push both
+        @if $push-both-cols {
+            @each $num in $push-both-cols {
+                .g__push--both-#{$num}#{$group-name} {
                     @include _grid-push-both($num);
                 }
             }
         }
-    }
 
-    //align left/right floatage
-    @if $directions {
-        @each $direction in $directions {
-            .g__col.g__align--#{$direction}#{$group-name} {
-                @include _grid-respond-to($breakpoint) {
+        //align left/right floatage
+        @if $directions {
+            @each $direction in $directions {
+                .g__col.g__align--#{$direction}#{$group-name} {
                     @include _grid-align-float($direction);
                 }
             }
         }
-    }
-}
+
+        //
+        // NESTED GRIDS
+        //
+        // example output:
+        //
+        // .g__col--3-of-12--largest {
+        //      width: 25%;
+        // }
+        //
+
+        @if $nested {
+            // get the column values we want to be able to nest inside at this breakpoint
+            $parents: map_keys($nested);
+
+            @each $parent in $parents {
+                // get the column values we want to be able to declare inside
+                // this parent column
+                $children: map-get($nested, $parent);
+
+                // engage!
+                @each $child in $children {
+                    .g__col--#{$child}-of-#{$parent}#{$group-name} {
+                        // set %age width, passing the parent column as context
+                        @include _grid-column($child, $parent);
+                    }
+                }
+            }
+        }
+
+        // build --all modifier columns for nested grids
+        //
+        // example
+        //
+        // .g__col--all--largest
+        //
+
+        .g__col--full#{$group-name} {
+            @include _grid-all-columns();
+        }
+    }// @include _grid-respond-to
+}// @each $group
